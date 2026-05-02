@@ -1,0 +1,1 @@
+This directory contains placeholder images used in the updated site. Replace these with your own high‑resolution images for production deployment.

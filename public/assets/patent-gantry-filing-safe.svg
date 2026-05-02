@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Patent-filed abstract visual for a built gantry transfer machine</title>
+  <desc id="desc">A filing-safe graphic with stage routing nodes, timing arrows, and a patent document panel without showing the machine exterior.</desc>
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1c2b"/>
+      <stop offset="58%" stop-color="#0a1420"/>
+      <stop offset="100%" stop-color="#0a1018"/>
+    </linearGradient>
+    <radialGradient id="ambient2" cx="50%" cy="34%" r="58%">
+      <stop offset="0%" stop-color="#1d3854" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#1d3854" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffb24a"/>
+      <stop offset="100%" stop-color="#ff8f28"/>
+    </linearGradient>
+    <filter id="glow2" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bg2)"/>
+  <rect width="1600" height="1000" fill="url(#ambient2)"/>
+
+  <g opacity="0.08" stroke="#5e7894" stroke-width="1">
+    <path d="M108 116H1492"/>
+    <path d="M108 884H1492"/>
+    <path d="M160 72V928"/>
+    <path d="M1440 72V928"/>
+  </g>
+
+  <g transform="translate(120 96)">
+    <rect x="0" y="0" width="208" height="42" rx="21" fill="#111f2d" stroke="#24384d"/>
+    <circle cx="28" cy="21" r="5.5" fill="url(#accent2)"/>
+    <text x="46" y="27" fill="#e9f0f7" font-size="18" font-family="IBM Plex Mono, monospace" letter-spacing="2">PATENT FILED</text>
+  </g>
+
+  <g transform="translate(148 220)">
+    <text x="0" y="0" fill="#f4f8fc" font-size="78" font-weight="700" font-family="Space Grotesk, Arial, sans-serif">Built gantry transfer</text>
+    <text x="0" y="92" fill="#f4f8fc" font-size="78" font-weight="700" font-family="Space Grotesk, Arial, sans-serif">system</text>
+    <text x="0" y="154" fill="#90a8be" font-size="30" font-family="Inter, Arial, sans-serif">Public visual simplified while patent details stay protected.</text>
+  </g>
+
+  <g transform="translate(150 560)">
+    <rect x="0" y="0" width="470" height="126" rx="24" fill="#101c29" stroke="#24384d"/>
+    <text x="34" y="45" fill="#eef4fb" font-size="28" font-weight="700" font-family="Space Grotesk, Arial, sans-serif">Filed throughput record</text>
+    <text x="34" y="82" fill="#9db3c7" font-size="22" font-family="Inter, Arial, sans-serif">Built transfer path shown through stage routing only.</text>
+    <rect x="34" y="95" width="148" height="8" rx="4" fill="#ffb24a" opacity="0.9"/>
+  </g>
+
+  <g transform="translate(694 164)">
+    <rect x="0" y="0" width="728" height="536" rx="34" fill="#101b28" stroke="#24384c"/>
+    <g transform="translate(78 128)">
+      <path d="M36 180H548" stroke="#23374b" stroke-width="3"/>
+      <path d="M36 96H548" stroke="#23374b" stroke-width="2"/>
+      <path d="M36 264H548" stroke="#23374b" stroke-width="2"/>
+
+      <circle cx="36" cy="180" r="16" fill="#132130" stroke="#31495f"/>
+      <circle cx="164" cy="180" r="16" fill="#132130" stroke="#31495f"/>
+      <circle cx="292" cy="180" r="18" fill="#132130" stroke="url(#accent2)" stroke-width="4" filter="url(#glow2)"/>
+      <circle cx="420" cy="180" r="16" fill="#132130" stroke="#31495f"/>
+      <circle cx="548" cy="180" r="16" fill="#132130" stroke="#31495f"/>
+
+      <rect x="14" y="232" width="44" height="52" rx="14" fill="#122130" stroke="#31495f"/>
+      <rect x="142" y="232" width="44" height="52" rx="14" fill="#122130" stroke="#31495f"/>
+      <rect x="270" y="232" width="44" height="52" rx="14" fill="#122130" stroke="#36516b"/>
+      <rect x="398" y="232" width="44" height="52" rx="14" fill="#122130" stroke="#31495f"/>
+      <rect x="526" y="232" width="44" height="52" rx="14" fill="#122130" stroke="#31495f"/>
+
+      <path d="M58 258h84M186 258h84M314 258h84M442 258h84" stroke="#ffb24a" stroke-width="4" stroke-linecap="round" opacity="0.58"/>
+      <path d="M126 258l14-10v20zM254 258l14-10v20zM382 258l14-10v20zM510 258l14-10v20z" fill="#ffb24a"/>
+
+      <g transform="translate(264 44)">
+        <rect x="0" y="0" width="56" height="42" rx="12" fill="#121f2e" stroke="#31495f"/>
+        <rect x="12" y="44" width="32" height="82" rx="14" fill="#121f2e" stroke="#31495f"/>
+        <path d="M28 70v34" stroke="#ffb24a" stroke-width="6" stroke-linecap="round"/>
+      </g>
+
+      <g transform="translate(0 0)" opacity="0.8">
+        <path d="M36 144v-28M164 144v-28M292 144v-28M420 144v-28M548 144v-28" stroke="#415b75" stroke-width="4" stroke-linecap="round"/>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(1176 124)">
+    <rect x="0" y="0" width="226" height="308" rx="30" fill="#101b28" stroke="#293d53"/>
+    <rect x="44" y="44" width="136" height="11" rx="5.5" fill="#eef4fb" opacity="0.94"/>
+    <rect x="44" y="80" width="136" height="11" rx="5.5" fill="#879fb7" opacity="0.42"/>
+    <rect x="44" y="116" width="104" height="11" rx="5.5" fill="#879fb7" opacity="0.26"/>
+    <rect x="44" y="182" width="138" height="72" rx="18" fill="#132130" stroke="#31495f"/>
+    <path d="M72 216h82M72 236h56" stroke="#eef4fb" stroke-width="6" stroke-linecap="round" opacity="0.84"/>
+    <path d="M154 204l24 24-24 24" fill="none" stroke="url(#accent2)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="44" y="288" fill="#9db3c7" font-size="18" font-family="IBM Plex Mono, monospace" letter-spacing="1.6">FILED 07.09.2025</text>
+  </g>
+</svg>

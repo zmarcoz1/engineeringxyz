@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200">
+  <!--
+    Custom word‑mark logo for EngineeringXYZ.
+    The design is inspired by the user's provided logo: a circular mark with
+    two arcs framing the word "engineering" and the acronym "XYZ".  The
+    background is completely transparent so the logo can sit neatly on top
+    of dark or light backgrounds without a visible box.  Colors are set via
+    currentColor so they inherit from CSS when inserted into the page.
+  -->
+  <g fill="none" stroke="currentColor" stroke-width="12">
+    <!-- top arc -->
+    <path d="M70,40 A130,130 0 0 1 330,40" />
+    <!-- bottom arc -->
+    <path d="M70,160 A130,130 0 0 0 330,160" />
+  </g>
+  <text x="200" y="105" text-anchor="middle" font-family="Arial, sans-serif"
+        font-size="48" fill="currentColor" font-weight="700">
+    engineering
+  </text>
+  <text x="200" y="155" text-anchor="middle" font-family="Arial, sans-serif"
+        font-size="60" fill="currentColor" font-weight="700">
+    XYZ
+  </text>
+</svg>

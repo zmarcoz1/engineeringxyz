@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Engineering Notes | Prototype Stations, Fixtures, and Poka-Yoke</title>
+    <meta
+      name="description"
+      content="Technical notes from EngineeringXYZ on prototype-station flow, fixture design, and poka-yoke implementation."
+    />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-shell">
+        <a class="brand-mark" href="index.html">
+          <span class="brand-kicker">EngineeringXYZ</span>
+          <span class="brand-sub">Machine prototypes | fixtures | tooling</span>
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-controls="mainNav"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="main-nav" id="mainNav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Projects</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <a class="button button-primary" href="contact.html#diagnostic">Book Free Diagnostic</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-shell page-hero compact">
+        <div class="hero-copy" data-reveal>
+          <span class="eyebrow">Engineering notes</span>
+          <h1>Short technical guidance that earns trust before the first call.</h1>
+          <p>
+            These notes are not meant to replace a project review. They are here to show how EngineeringXYZ thinks
+            about recurring issues in prototype-station flow, fixture design, and error-proofing on the floor.
+          </p>
+          <div class="note-anchor-row">
+            <a class="note-anchor" href="#machine-flow-notes">Machine flow</a>
+            <a class="note-anchor" href="#fixture-notes">Fixture mistakes</a>
+            <a class="note-anchor" href="#guarding-notes">Guarding and reset</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="page-shell section-block">
+        <div class="article-grid">
+          <article class="article-card" data-reveal>
+            <span class="card-tag">Machine flow</span>
+            <h3>3 places throughput leaks out of a prototype station before the process even starts</h3>
+            <p>
+              Part presentation, transfer timing, and machine reset get expensive when the station sequence is not
+              treated as one system.
+            </p>
+            <a class="resource-link" href="#machine-flow-notes">Jump to note</a>
+          </article>
+          <article class="article-card" data-reveal data-reveal-delay="1">
+            <span class="card-tag">Fixture design</span>
+            <h3>3 common mistakes that only show up when the operator starts using the station</h3>
+            <p>
+              Many fixture problems are not geometric failures. They are loading, access, variation, and
+              changeover failures that only become obvious on the floor.
+            </p>
+            <a class="resource-link" href="#fixture-notes">Jump to note</a>
+          </article>
+          <article class="article-card" data-reveal data-reveal-delay="2">
+            <span class="card-tag">Guarding and reset</span>
+            <h3>Where confirmation, guarding, and reset logic belong in production hardware</h3>
+            <p>
+              The strongest error-proofing details usually live at the part-entry, confirmation, and reset stages
+              of a station, not as an afterthought.
+            </p>
+            <a class="resource-link" href="#guarding-notes">Jump to note</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="page-shell section-block" id="machine-flow-notes">
+        <article class="legal-card" data-reveal>
+          <span class="card-tag">Machine flow</span>
+          <h1>3 places throughput leaks out of a prototype station before the process even starts.</h1>
+          <div class="note-list">
+            <div>
+              <h2>1. The part-entry state is never defined tightly enough.</h2>
+              <p>
+                If the part can arrive in multiple orientations or ambiguous positions, the machine starts every
+                cycle by inheriting avoidable uncertainty.
+              </p>
+            </div>
+            <div>
+              <h2>2. Transfer timing is designed locally instead of across the full station sequence.</h2>
+              <p>
+                An actuator can move correctly and still create drag if the handoff between loading, motion,
+                process, and discharge is not treated as one machine rhythm.
+              </p>
+            </div>
+            <div>
+              <h2>3. Reset and recovery states are ignored until startup.</h2>
+              <p>
+                Stations lose more time in awkward restart behavior than teams expect. Good machine concepts make
+                the ready state obvious and recovery predictable.
+              </p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="page-shell section-block" id="fixture-notes">
+        <article class="legal-card" data-reveal>
+          <span class="card-tag">Fixture design</span>
+          <h1>3 common fixture mistakes that appear only after operator use begins.</h1>
+          <div class="note-list">
+            <div>
+              <h2>1. The part locates correctly, but loads awkwardly.</h2>
+              <p>
+                A fixture can be dimensionally correct and still fail in practice if the operator has to fight
+                access, visibility, or orientation every cycle.
+              </p>
+            </div>
+            <div>
+              <h2>2. Changeover assumptions are too optimistic.</h2>
+              <p>
+                What looks like a quick part-family swap in CAD can become a slow station reset if clamps, nests,
+                or adjustment points are not designed for repeated use.
+              </p>
+            </div>
+            <div>
+              <h2>3. Variation is treated as an exception instead of a design condition.</h2>
+              <p>
+                Real stations see tolerance spread, wear, and inconsistent human handling. Fixture strategy has to
+                account for those realities from the beginning.
+              </p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="page-shell section-block" id="guarding-notes">
+        <article class="legal-card" data-reveal>
+          <span class="card-tag">Guarding and reset</span>
+          <h1>Where confirmation, guarding, and reset logic belong in production hardware.</h1>
+          <div class="note-list">
+            <div>
+              <h2>1. At the point of part entry</h2>
+              <p>
+                The easiest mistake to prevent is often the earliest one: wrong orientation, incomplete seating, or
+                incorrect setup before the cycle even begins.
+              </p>
+            </div>
+            <div>
+              <h2>2. At the confirmation point before critical motion or process</h2>
+              <p>
+                Before pressing, scanning, coating, or transfer motion, the station should make the correct
+                condition more likely than the incorrect one.
+              </p>
+            </div>
+            <div>
+              <h2>3. In the reset state after each cycle</h2>
+              <p>
+                A station that resets ambiguously invites the next error. Good tooling design makes the ready state
+                visually and mechanically obvious.
+              </p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="page-shell section-block">
+        <div class="callout-band" data-reveal>
+          <div>
+              <h2>Want these notes applied to a real bottleneck instead of a generic example?</h2>
+              <p>
+              Bring the current station, machine sequence, or fixture problem into a short diagnostic and we can
+              make the conversation specific very quickly.
+              </p>
+          </div>
+          <div class="button-row">
+              <a class="button button-primary" href="contact.html#diagnostic">Book Free Diagnostic</a>
+            <a class="button button-secondary" href="fixture-checklist.html">Open the checklist</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <a class="brand-mark footer-brand" href="index.html">
+            <span class="brand-kicker">EngineeringXYZ</span>
+            <span class="brand-sub">Machine prototypes | fixtures | tooling</span>
+          </a>
+          <p>
+            EngineeringXYZ supports manufacturing teams with machine prototypes, engineering drawings, fixture development, and
+            production equipment that is meant to survive contact with the shop floor.
+          </p>
+        </div>
+        <div class="footer-column">
+          <h3>Explore</h3>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Projects</a></li>
+            <li><a href="case-study.html">Case study</a></li>
+            <li><a href="insights.html">Engineering notes</a></li>
+            <li><a href="fixture-checklist.html">Fixture checklist</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <ul class="contact-list">
+            <li><a href="mailto:info@engineeringxyz.com">info@engineeringxyz.com</a></li>
+            <li><a href="tel:7605151517">760-515-1517</a></li>
+            <li>Irvine, California</li>
+          </ul>
+          <div class="social-row">
+            <a href="https://www.facebook.com/people/Engineeringxyz/61580466110112/" target="_blank" rel="noopener">
+              <img src="assets/facebook.svg" alt="Facebook" />
+            </a>
+            <a href="https://www.linkedin.com/company/engineeringxyz" target="_blank" rel="noopener">
+              <img src="assets/linkedin.svg" alt="LinkedIn" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-note">
+        <span>&copy; 2012-2026 EngineeringXYZ. All rights reserved.</span>
+        <span><a href="privacy.html">Privacy policy</a> | <a href="fixture-checklist.html">Fixture checklist</a></span>
+      </div>
+    </footer>
+  </body>
+</html>
+
+

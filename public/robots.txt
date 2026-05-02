@@ -1,0 +1,6 @@
+# robots.txt for EngineeringXYZ
+User-agent: *
+Allow: /
+
+# Point crawlers to the sitemap
+Sitemap: https://zmarcoz1.github.io/engineeringxyz/sitemap.xml

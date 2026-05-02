@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Patent-filed abstract visual for a built dip coating machine</title>
+  <desc id="desc">A filing-safe graphic with a process droplet, measurement rings, and a patent document panel without showing the machine exterior.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1c2b"/>
+      <stop offset="58%" stop-color="#0a1420"/>
+      <stop offset="100%" stop-color="#0a1018"/>
+    </linearGradient>
+    <radialGradient id="ambient" cx="42%" cy="42%" r="55%">
+      <stop offset="0%" stop-color="#1d3854" stop-opacity="0.72"/>
+      <stop offset="100%" stop-color="#1d3854" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffb24a"/>
+      <stop offset="100%" stop-color="#ff8f28"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="14" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect width="1600" height="1000" fill="url(#ambient)"/>
+
+  <g opacity="0.08" stroke="#5e7894" stroke-width="1">
+    <path d="M108 116H1492"/>
+    <path d="M108 884H1492"/>
+    <path d="M160 72V928"/>
+    <path d="M1440 72V928"/>
+  </g>
+
+  <g transform="translate(120 96)">
+    <rect x="0" y="0" width="208" height="42" rx="21" fill="#111f2d" stroke="#24384d"/>
+    <circle cx="28" cy="21" r="5.5" fill="url(#accent)"/>
+    <text x="46" y="27" fill="#e9f0f7" font-size="18" font-family="IBM Plex Mono, monospace" letter-spacing="2">PATENT FILED</text>
+  </g>
+
+  <g transform="translate(148 220)">
+    <text x="0" y="0" fill="#f4f8fc" font-size="78" font-weight="700" font-family="Space Grotesk, Arial, sans-serif">Built dip coating</text>
+    <text x="0" y="92" fill="#f4f8fc" font-size="78" font-weight="700" font-family="Space Grotesk, Arial, sans-serif">system</text>
+    <text x="0" y="154" fill="#90a8be" font-size="30" font-family="Inter, Arial, sans-serif">Public visual simplified while patent details stay protected.</text>
+  </g>
+
+  <g transform="translate(160 560)">
+    <rect x="0" y="0" width="430" height="126" rx="24" fill="#101c29" stroke="#24384d"/>
+    <text x="34" y="45" fill="#eef4fb" font-size="28" font-weight="700" font-family="Space Grotesk, Arial, sans-serif">Filed build record</text>
+    <text x="34" y="82" fill="#9db3c7" font-size="22" font-family="Inter, Arial, sans-serif">Built machine shown through process cues only.</text>
+    <rect x="34" y="95" width="132" height="8" rx="4" fill="#ffb24a" opacity="0.9"/>
+  </g>
+
+  <g transform="translate(710 140)">
+    <circle cx="230" cy="350" r="212" fill="none" stroke="#22364a" stroke-width="2"/>
+    <circle cx="230" cy="350" r="162" fill="none" stroke="#263d53" stroke-width="2" stroke-dasharray="12 14"/>
+    <circle cx="230" cy="350" r="116" fill="none" stroke="#36516b" stroke-width="2"/>
+    <circle cx="230" cy="350" r="42" fill="none" stroke="url(#accent)" stroke-width="5" filter="url(#glow)"/>
+    <path d="M230 150
+             C286 238 358 300 358 380
+             C358 456 302 512 230 512
+             C158 512 102 456 102 380
+             C102 300 174 238 230 150Z"
+          fill="#88d6ff" fill-opacity="0.08" stroke="#9edcff" stroke-opacity="0.68" stroke-width="4"/>
+    <path d="M188 352c24 18 60 18 84 0" fill="none" stroke="url(#accent)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M164 412h132" stroke="#d7e3ef" stroke-opacity="0.72" stroke-width="4" stroke-linecap="round"/>
+    <g transform="translate(-18 510)">
+      <rect x="0" y="0" width="496" height="18" rx="9" fill="#132232" stroke="#2d4258"/>
+      <rect x="38" y="-42" width="420" height="20" rx="10" fill="#122131" stroke="#2d4258"/>
+      <rect x="90" y="-92" width="316" height="24" rx="12" fill="#11202f" stroke="#36516b"/>
+      <rect x="140" y="-152" width="216" height="30" rx="15" fill="#101d2a" stroke="#36516b"/>
+      <path d="M64 10h368" stroke="#ffb24a" stroke-opacity="0.28" stroke-width="4" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <g transform="translate(1174 126)">
+    <rect x="0" y="0" width="230" height="302" rx="30" fill="#101b28" stroke="#293d53"/>
+    <rect x="46" y="46" width="138" height="11" rx="5.5" fill="#eef4fb" opacity="0.94"/>
+    <rect x="46" y="82" width="138" height="11" rx="5.5" fill="#879fb7" opacity="0.42"/>
+    <rect x="46" y="118" width="102" height="11" rx="5.5" fill="#879fb7" opacity="0.26"/>
+    <rect x="46" y="186" width="138" height="70" rx="18" fill="#132130" stroke="#31495f"/>
+    <path d="M72 220l24 22 52-54" fill="none" stroke="url(#accent)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="46" y="286" fill="#9db3c7" font-size="18" font-family="IBM Plex Mono, monospace" letter-spacing="1.6">FILED 07.08.2025</text>
+  </g>
+</svg>
