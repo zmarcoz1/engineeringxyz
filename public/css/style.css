@@ -333,7 +333,10 @@ button {
 .utility-card h1,
 .section-heading h2,
 .form-card h1,
+.form-card h2,
 .legal-card h1,
+.legal-card h2,
+.service-detail h2,
 .service-detail h3,
 .project-body h3,
 .info-card h3,
@@ -347,7 +350,9 @@ button {
 .hero-copy h1,
 .utility-card h1,
 .form-card h1,
-.legal-card h1 {
+.form-card h2,
+.legal-card h1,
+.legal-card h2 {
   margin: 0.8rem 0 1rem;
   font-size: clamp(2.6rem, 6vw, 5rem);
   line-height: 1.03;
@@ -376,6 +381,12 @@ button {
 
 .page-intro {
   max-width: 46rem;
+}
+
+.hero-support {
+  margin: 0.9rem 0 0;
+  color: var(--muted-strong);
+  font-size: 0.96rem;
 }
 
 .hero-copy p {
@@ -858,6 +869,7 @@ button {
 }
 
 .info-card h3,
+.service-detail h2,
 .step-card h3,
 .service-detail h3,
 .metric-card h3,
@@ -1185,6 +1197,10 @@ button {
   max-width: 36rem;
 }
 
+.outreach-band .resource-link {
+  margin-top: 0;
+}
+
 .pill-row {
   display: flex;
   flex-wrap: wrap;
@@ -1317,6 +1333,10 @@ button {
 
 .resource-link:hover {
   color: var(--accent-strong);
+}
+
+.service-detail .resource-link {
+  margin-top: 1rem;
 }
 
 .section-link {
@@ -1507,6 +1527,13 @@ button {
   display: grid;
   gap: 0.9rem;
   margin-top: 1rem;
+}
+
+.note-list h3 {
+  margin: 0 0 0.45rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.12rem;
+  line-height: 1.15;
 }
 
 .note-list p {

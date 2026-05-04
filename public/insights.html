@@ -98,24 +98,24 @@
       <section class="page-shell section-block" id="machine-flow-notes">
         <article class="legal-card" data-reveal>
           <span class="card-tag">Machine flow</span>
-          <h1>3 places throughput leaks out of a prototype station before the process even starts.</h1>
+          <h2>3 places throughput leaks out of a prototype station before the process even starts.</h2>
           <div class="note-list">
             <div>
-              <h2>1. The part-entry state is never defined tightly enough.</h2>
+              <h3>1. The part-entry state is never defined tightly enough.</h3>
               <p>
                 If the part can arrive in multiple orientations or ambiguous positions, the machine starts every
                 cycle by inheriting avoidable uncertainty.
               </p>
             </div>
             <div>
-              <h2>2. Transfer timing is designed locally instead of across the full station sequence.</h2>
+              <h3>2. Transfer timing is designed locally instead of across the full station sequence.</h3>
               <p>
                 An actuator can move correctly and still create drag if the handoff between loading, motion,
                 process, and discharge is not treated as one machine rhythm.
               </p>
             </div>
             <div>
-              <h2>3. Reset and recovery states are ignored until startup.</h2>
+              <h3>3. Reset and recovery states are ignored until startup.</h3>
               <p>
                 Stations lose more time in awkward restart behavior than teams expect. Good machine concepts make
                 the ready state obvious and recovery predictable.
@@ -128,24 +128,24 @@
       <section class="page-shell section-block" id="fixture-notes">
         <article class="legal-card" data-reveal>
           <span class="card-tag">Fixture design</span>
-          <h1>3 common fixture mistakes that appear only after operator use begins.</h1>
+          <h2>3 common fixture mistakes that appear only after operator use begins.</h2>
           <div class="note-list">
             <div>
-              <h2>1. The part locates correctly, but loads awkwardly.</h2>
+              <h3>1. The part locates correctly, but loads awkwardly.</h3>
               <p>
                 A fixture can be dimensionally correct and still fail in practice if the operator has to fight
                 access, visibility, or orientation every cycle.
               </p>
             </div>
             <div>
-              <h2>2. Changeover assumptions are too optimistic.</h2>
+              <h3>2. Changeover assumptions are too optimistic.</h3>
               <p>
                 What looks like a quick part-family swap in CAD can become a slow station reset if clamps, nests,
                 or adjustment points are not designed for repeated use.
               </p>
             </div>
             <div>
-              <h2>3. Variation is treated as an exception instead of a design condition.</h2>
+              <h3>3. Variation is treated as an exception instead of a design condition.</h3>
               <p>
                 Real stations see tolerance spread, wear, and inconsistent human handling. Fixture strategy has to
                 account for those realities from the beginning.
@@ -158,24 +158,24 @@
       <section class="page-shell section-block" id="guarding-notes">
         <article class="legal-card" data-reveal>
           <span class="card-tag">Guarding and reset</span>
-          <h1>Where confirmation, guarding, and reset logic belong in production hardware.</h1>
+          <h2>Where confirmation, guarding, and reset logic belong in production hardware.</h2>
           <div class="note-list">
             <div>
-              <h2>1. At the point of part entry</h2>
+              <h3>1. At the point of part entry</h3>
               <p>
                 The easiest mistake to prevent is often the earliest one: wrong orientation, incomplete seating, or
                 incorrect setup before the cycle even begins.
               </p>
             </div>
             <div>
-              <h2>2. At the confirmation point before critical motion or process</h2>
+              <h3>2. At the confirmation point before critical motion or process</h3>
               <p>
                 Before pressing, scanning, coating, or transfer motion, the station should make the correct
                 condition more likely than the incorrect one.
               </p>
             </div>
             <div>
-              <h2>3. In the reset state after each cycle</h2>
+              <h3>3. In the reset state after each cycle</h3>
               <p>
                 A station that resets ambiguously invites the next error. Good tooling design makes the ready state
                 visually and mechanically obvious.
