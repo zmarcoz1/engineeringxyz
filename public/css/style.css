@@ -234,6 +234,54 @@ summary:focus-visible {
   max-width: 26ch;
 }
 
+/* Standalone utility pages */
+.legal-hero .lede,
+.utility-panel .lede {
+  margin-top: 18px;
+}
+
+.legal-content {
+  max-width: 780px;
+}
+
+.legal-content .page-intro {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.legal-content h2 {
+  margin-top: 40px;
+  margin-bottom: 12px;
+}
+
+.legal-content ul {
+  padding-left: 1.35rem;
+}
+
+.legal-content li + li {
+  margin-top: 8px;
+}
+
+.utility-page {
+  display: grid;
+  min-height: 58vh;
+  align-items: center;
+}
+
+.utility-panel {
+  text-align: center;
+}
+
+.utility-panel .lede {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.utility-panel .btn-row {
+  justify-content: center;
+  margin-top: 28px;
+}
+
 /* --------------------------------------------------------------------------
    Buttons
    --------------------------------------------------------------------------
