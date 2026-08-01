@@ -1137,6 +1137,23 @@ summary:focus-visible {
   margin-bottom: 16px;
 }
 
+.founder__linkedin {
+  margin-top: -6px;
+  margin-bottom: 16px;
+}
+
+.founder__linkedin a {
+  color: var(--blue);
+  font-weight: 800;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.founder__linkedin a:hover,
+.founder__linkedin a:focus-visible {
+  color: var(--navy);
+}
+
 .founder__bio {
   font-size: 16px;
   max-width: 60ch;
