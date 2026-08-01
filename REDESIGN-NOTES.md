@@ -1,85 +1,78 @@
-# EngineeringXYZ redesign (v3) — build and go-live notes
+# EngineeringXYZ redesign — build, go-live, and rollback notes
 
-The redesign is built as plain static HTML, CSS, and vanilla JavaScript and is
-staged at **`public/v3/`**. The current live site is untouched and keeps
-serving from `public/`.
+The redesign is **live at the site root**. `https://www.engineeringxyz.com/`
+now serves the new homepage; the previous site is retained in the repo as
+`*-old.html` for rollback.
 
-Review it at `https://www.engineeringxyz.com/v3/` once this branch is merged
-(every push to `main` redeploys `./public` via
-`.github/workflows/deploy-pages.yml`).
+Every push to `main` redeploys `./public` via
+`.github/workflows/deploy-pages.yml`.
 
 ---
 
-## 1. What changed
+## 1. Current structure of `public/`
 
-### New files
+### The live site
 
 ```
-public/v3/
-├── index.html          Home
-├── services.html       Six services, anchored #prototypes #fixtures
-│                       #inspection #design #production #capacity
-├── projects.html       Four case studies, anchored #architecture #gantry
+public/
+├── index.html          Home  (the landing page)
+├── services.html       Six services: #prototypes #fixtures #inspection
+│                       #design #production #capacity
+├── projects.html       Four case studies: #architecture #gantry
 │                       #inspection #benchtop
 ├── about.html          Consultancy, founder, working style, experience areas
 ├── resources.html      Gated Fixture Design Checklist + six open guides
 ├── contact.html        Contact form
-├── css/style.css       One shared stylesheet
+├── privacy.html        Privacy policy (legacy styling, see §6)
+├── 404.html            Not-found page (legacy styling)
+├── css/style.css       The redesign's stylesheet
 ├── js/script.js        Nav toggle, analytics, both forms
 ├── llms.txt            Plain-language summary for AI crawlers
-├── favicon.ico
+├── robots.txt          Crawler allow-list + sitemap pointer
+├── sitemap.xml         Seven canonical URLs
 └── assets/             WebP + JPEG pairs, logo mark, OG image
 ```
 
-### Modified files
+### Redirect stubs for retired URLs
 
-- `public/robots.txt` — added the explicit AI/search crawler allow-list,
-  `Disallow: /v3/`, `/lab/`, `/thank-you/`, `/*?utm_`, and pointed the sitemap
-  at the real domain instead of `zmarcoz1.github.io`.
-- `public/sitemap.xml` — same host correction. It still lists the **currently
-  live** pages, deliberately: the `/v3/` staging pages are noindexed and must
-  not appear. Replace the list at go-live (step 6 below).
+GitHub Pages serves no server-side redirects, so each retired path is a small
+HTML file carrying `<link rel="canonical">` (passes ranking signals),
+`<meta http-equiv="refresh">` (moves visitors), and `noindex, follow`.
 
-Nothing under `public/` other than those two files was touched.
-
-### Design system
-
-Colours, type scale, spacing, radii, and shadows follow the build brief
-exactly, with one deliberate exception recorded in §5. Tokens live at the top
-of `css/style.css` as custom properties — change them there, not inline.
-
-### Defects from the prior review that are fixed here
-
-| Issue | How it is handled |
+| Old URL | Now points to |
 |---|---|
-| `header`/`footer` nested inside `main` | All three are siblings on every page |
-| Multiple `h1`, skipped heading levels | One `h1` per page, no level skips (verified) |
-| FAQ JSON-LD drifting from visible text | Both are emitted from one source string; verified byte for byte |
-| Category `<option value>` slugs | Values are the full lowercase labels the backend accepts |
-| `elapsed` vs `elapsed_ms` | Sends `elapsed_ms` |
-| Resource form missing `company`/`category` | Sends both (`category: "other"`) |
-| Conversions firing on button click | `contact_form_submit` and `resource_download` fire only after `ok:true` |
-| `#7393a7` muted text on navy | `#9fbacd` (6.7:1) |
-| Hamburger at 920px while nav wrapped at 1160px | Breakpoint is 1160px |
-| `info@engineeringxyz.com` | `mwu@engineeringxyz.com` everywhere |
+| `portfolio.html` | `projects.html` |
+| `testimonials.html` | `about.html` |
+| `case-study.html` | `projects.html` |
+| `insights.html` | `resources.html` |
+| `fixture-checklist.html` | `resources.html` |
+
+### Rollback copies and legacy assets
+
+`index-old.html`, `about-old.html`, `services-old.html`, `contact-old.html`
+are the previous pages, unlinked from anywhere. They — plus `privacy.html`,
+`404.html`, `resume.html`, and `thankyou.html` — load `css/legacy.css` and
+`js/legacy.js`, which are the previous `style.css` and `script.js` renamed.
+That rename is what lets the redesign own the clean `css/style.css` and
+`js/script.js` paths without breaking anything that still uses the old markup.
 
 ---
 
 ## 2. How to edit copy
 
-Every page is plain HTML — open the file and edit the text. There is no build
-step, no template engine, and no npm. Commit and push; Pages redeploys.
+Every page is plain HTML. Open the file, edit the text, commit, push. There is
+no build step, no template engine, no npm.
 
-Copy that appears on more than one page (nav labels, footer, contact details)
-is duplicated in each file. Search-and-replace across `public/v3/*.html` when
-changing it. The phone number appears as both display text and a `tel:` href;
-the email as both display text and a `mailto:` href.
+Shared copy (nav labels, footer, contact details) is duplicated across the six
+pages — search and replace across `public/*.html`. The phone number appears as
+both display text and a `tel:` href; the email as both display text and a
+`mailto:` href.
 
-**The FAQ is the one exception.** The answers on `index.html` appear twice:
-once as visible `<dd>` text and once inside the FAQPage JSON-LD in `<head>`.
-Google invalidates the rich result if they differ by even one character, so
-edit both, and keep the em-dashes (`—`) and the straight apostrophe in
-"client's" exactly as they are.
+**The FAQ is the one exception.** The five answers on `index.html` appear
+twice: once as visible `<dd>` text, once inside the FAQPage JSON-LD in
+`<head>`. Google invalidates the rich result if they differ by a single
+character, so edit both and keep the em-dashes (`—`) and the straight
+apostrophe in "client's" exactly as they are.
 
 ## 3. How to replace images
 
@@ -94,121 +87,156 @@ with explicit `width`/`height` to prevent layout shift:
 </picture>
 ```
 
-To swap one, export the new photo at the same pixel dimensions in both
-formats, overwrite the two files in `public/v3/assets/`, and update the `alt`
-text. If the dimensions change, update `width`/`height` in the HTML too.
+Export the replacement at the same pixel dimensions in both formats,
+overwrite the two files in `public/assets/`, and update the `alt` text. If the
+dimensions change, update `width`/`height` too.
 
 Current sizes: hero 1600×900, homepage cards 720×480, case studies 800×600,
 About portrait 400×400, About workspace 800×1000, OG image 1200×630.
 
-**The two empty Selected Work slots on the homepage** are `<div
-class="placeholder-media">` blocks reading "Project photography pending".
-Replace each with a `<picture>` block in the same shape as above once real
-photos exist. Do not fill them with stock art.
+**The two empty Selected Work slots on the homepage** are
+`<div class="placeholder-media">` blocks reading "Project photography
+pending". Replace each with a `<picture>` block once real photos exist. Do not
+fill them with stock art.
 
 ---
 
-## 4. Factual claims that still need verification
+## 4. SEO and AI-crawler configuration
 
-Nothing below is invented, but these were carried from earlier drafts and
-should be confirmed before the site goes live and cold email points at it.
+**Per page:** unique `<title>` and meta description, `<link rel="canonical">`
+on the absolute `https://www.engineeringxyz.com/…` URL, Open Graph
+(type, site_name, url, title, description, image 1200×630, image:alt),
+`twitter:card`, and `robots: max-image-preview:large` so image thumbnails are
+eligible in results.
+
+**Structured data.** Home carries a JSON-LD `@graph` with four nodes:
+Organization + ProfessionalService (name, url, logo, telephone, email,
+founder, PostalAddress, areaServed, seven `knowsAbout` topics, and a
+six-item `hasOfferCatalog`), WebSite, BreadcrumbList, and FAQPage. The other
+five pages each carry a BreadcrumbList. All `@id`/`url`/`item` values are
+absolute root URLs.
+
+**FAQ rich result.** The five FAQPage answers match the visible `<dd>` text
+byte for byte — verified programmatically, not by eye.
+
+**`robots.txt`** names the search and AI crawlers explicitly — Googlebot,
+Googlebot-Image, Bingbot, DuckDuckBot, Applebot, GPTBot, OAI-SearchBot,
+ChatGPT-User, ClaudeBot, Claude-User, Claude-SearchBot, PerplexityBot,
+Perplexity-User, Google-Extended, Applebot-Extended, CCBot,
+Meta-ExternalAgent, Amazonbot — rather than relying on a bare wildcard, so a
+future blanket restriction cannot silently cut off AI answer engines. It
+disallows `/lab/`, `/thank-you/`, `/thankyou.html`, and `/*?utm_` to prevent
+duplicate campaign URLs being indexed, and points at the sitemap.
+
+**`sitemap.xml`** lists the six pages plus `privacy.html`, each with
+`lastmod`. Redirect stubs are excluded.
+
+**`llms.txt`** at the root gives AI crawlers a plain-markdown summary:
+positioning, the six services, the process, the three documented outcomes,
+a page map, and an explicit note that the company publishes no staff-size
+claims.
+
+**Why this is AI-legible.** The site is static HTML with real content in the
+initial response — no client-side rendering, so a crawler that does not
+execute JavaScript still sees every word. Semantics carry meaning: `<article>`
+for cards, `<figure>`/`<figcaption>` for images, `<dl>`/`<dt>`/`<dd>` for the
+FAQ, `header`/`main`/`footer` as siblings, one `h1` per page with no skipped
+levels.
+
+**Still to do in Search Console:** resubmit the sitemap, and request
+re-indexing of the five retired URLs so the redirects are picked up quickly.
+
+---
+
+## 5. Factual claims that still need verification
+
+Nothing below is invented, but these were carried from earlier drafts and are
+now publicly live.
 
 - [ ] **"49 motors to 4"** — confirm the numbers and that citing the project
       is permitted. Used on Home (proof strip and Selected Work) and Projects.
 - [ ] **"10+ years of engineering and automation experience"** — confirm.
-- [ ] **Peer-reviewed publications: 4** — supplied for this build; confirm it
-      is the number you want published (About page).
-- [ ] **Two U.S. patent applications in process** — stated as "2" on About,
-      from the brief (19/262,799 and 19/264,592, filed July 2025). Confirm the
-      count is still current and that the machine geometry stays undescribed.
-- [ ] **"Replies within one business day"** — this is a public commitment on
-      Contact, Home, and in the auto-reply. Confirm you can hold it.
-- [ ] **"First scopes typically run two to four weeks"** — FAQ 2. Confirm.
-- [ ] **NDA availability** — "Confidential project information can be reviewed
-      under NDA" appears on Home, Contact, and in the FAQ. Confirm.
-- [ ] **All four case studies** (Projects page) — every situation, constraint,
-      and outcome sentence needs your review and a confidentiality check.
-      "Substantially reduced manual effort" on the benchtop case is
-      deliberately unquantified; replace it with a real figure or leave it.
+- [ ] **Peer-reviewed publications: 4** — confirm this is the number you want
+      published (About page).
+- [ ] **Two U.S. patent applications in process** — stated as "2" on About
+      (19/262,799 and 19/264,592, filed July 2025). Confirm still current, and
+      that the machine geometry stays undescribed.
+- [ ] **"Replies within one business day"** — a public commitment on Contact,
+      Home, and in the auto-reply. Confirm you can hold it.
+- [ ] **"First scopes typically run two to four weeks"** — FAQ 2.
+- [ ] **NDA availability** — appears on Home, Contact, and in the FAQ.
+- [ ] **All four case studies** — every situation, constraint, and outcome
+      sentence needs your review and a confidentiality check. "Substantially
+      reduced manual effort" on the benchtop case is deliberately
+      unquantified; replace with a real figure or leave it.
 - [ ] **Service region wording** — "Southern California on-site and remote
-      clients nationwide". Confirm.
+      clients nationwide".
 - [ ] **The three testimonials** are quoted verbatim from LinkedIn
-      recommendations. Consider getting explicit permission to display them,
-      and to link each name to its LinkedIn profile.
+      recommendations. Consider getting explicit permission to display them.
 
-The **"two days → 40 seconds" scheduling metric** from the brief is *not* used
-anywhere in this build. The homepage proof strip carries "49 → 4 motors",
-"10+ years", and "Concept → build-ready" as the brief's Home section
-specifies. Add the scheduling metric if you want it, once verified.
+The **"two days → 40 seconds" scheduling metric** is not used anywhere. The
+homepage proof strip carries "49 → 4 motors", "10+ years", and
+"Concept → build-ready". Add the scheduling metric if you want it, once
+verified.
 
-## 5. Deliberate deviations from the brief
+## 6. Known gaps and deliberate deviations
 
-1. **Primary button text is navy, not cream.** The brief specifies `#f4f1e8`
-   on the gold `#cba65a` button. That measures **2.03:1** and fails WCAG AA,
-   which the brief also requires; the earlier review had already flagged gold
-   button text as a contrast risk. Navy on gold measures **5.91:1**, and the
-   hover state (cream on `#3f5e7b`) measures **6.00:1**. Both pass. The button
+1. **No postal address in the footer.** CAN-SPAM requires a full physical
+   postal address, and one was not available at build time. The footer carries
+   "Irvine, CA · Serving Southern California and remote clients nationwide",
+   which is **not sufficient on its own**. **This is a blocker before any cold
+   email links to the site.** A registered-agent address or PO box qualifies.
+   Add it inside the `<address>` element in the footer of all six pages.
+
+2. **Primary button text is navy, not the brief's cream.** Cream on gold
+   measures **2.03:1** and fails WCAG AA; navy on gold measures **5.91:1**,
+   and the hover state (cream on `#3f5e7b`) measures **6.00:1**. The button
    still reads as gold. Revert in `.btn--primary` in `css/style.css` if you
-   would rather have the original colour and accept the failure.
+   prefer the original colour and accept the failure.
 
-2. **No postal address in the footer.** The brief requires a full physical
-   postal address for CAN-SPAM, and one was not available at build time. The
-   footer carries "Irvine, CA · Serving Southern California and remote clients
-   nationwide", which is **not sufficient** on its own.
-   **This is a launch blocker if any cold email links to the site.** A
-   registered-agent address or PO box qualifies. Add it inside the
-   `<address>` element in the footer of all six pages.
+3. **`privacy.html` and `404.html` still use the old design.** They load
+   `css/legacy.css`, so they work but do not match the new look. Restyling
+   them to the new system is a small, contained job worth doing.
 
-3. **The prototype's illustrations are not used.** `machine1-3.png` and
+4. **The prototype's illustrations were not used.** `machine1-3.png` and
    `robotic_arm.png` are AI-generated clipart (flat-vector robot arms, glowing
-   nodes, gear motifs) and fall inside the brief's banned imagery list. The
-   case-study and card images use the abstracted technical renders already
-   in `public/assets/` instead, each with a neutral caption stating the render
-   is illustrative and photography is pending. No factual caption sits under
-   illustrative art.
-
-4. **`llms.txt` is at `public/v3/llms.txt`**, matching the file tree in the
-   task. It describes the redesigned site, so it should not sit at the live
-   root until go-live. Move it to `public/llms.txt` in step 5 below.
+   nodes) and fall inside the brief's banned imagery list. Case-study and card
+   images use the abstracted technical renders already in `assets/`, each with
+   a neutral caption stating the render is illustrative and photography is
+   pending. No factual caption sits under illustrative art.
 
 5. **The contact form's file input does not upload.** The Apps Script backend
-   takes form fields over `URLSearchParams`; it cannot receive a file. The
-   field is kept because it is a useful prompt, but the hint text says files
-   are not transmitted, and the success message tells anyone who selected one
-   to email it. Nothing claims an attachment was received. Wire a real upload
-   (Drive picker or a separate endpoint) if you want attachments.
+   receives form fields over `URLSearchParams` and cannot take a file. The
+   field is kept as a useful prompt; the hint says files are not transmitted,
+   and the success message tells anyone who selected one to email it. Nothing
+   claims an attachment was received.
 
-## 6. Assets still needed from the client
+## 7. Assets still needed
 
-- **Real hardware photography** — the single highest-impact item. Three to
-  five detail shots (clamp, locator nest, frame weldment, wire routing) would
-  fill the two empty homepage slots and replace the four illustrative case
-  study renders. Patent filings are complete, so photography is safe.
+- **Real hardware photography** — the highest-impact item. Three to five
+  detail shots (clamp, locator nest, frame weldment, wire routing) would fill
+  the two empty homepage slots and replace the four illustrative case-study
+  renders. Patent filings are complete, so photography is safe.
 - **The Fixture Design Checklist PDF.** The Resources form currently emails
-  you a request; there is no PDF to send yet. Either produce it or take the
-  featured block down before launch.
+  you a request; there is no PDF to send yet.
 - **The six guide articles.** Their cards link to Contact ("Request this
   guide") rather than to dead URLs. Write them, or trim the list.
-- **A workspace or CAD photo** for the About page, to replace the illustrative
-  exploded-view render.
-- **Privacy policy text** — `public/privacy.html` exists on the old site and is
-  not part of the v3 set. Carry it over or rewrite it before go-live.
-- **A full physical postal address** (see §5.2).
-- **The original logo typeface**, if one exists. The wordmark currently uses
-  Nunito 900 as a substitute, beside the hexagon mark in
-  `assets/logo-mark.svg`.
+- **A workspace or CAD photo** for About, replacing the exploded-view render.
+- **A full physical postal address** (§6.1).
+- **The original logo typeface**, if one exists. The wordmark uses Nunito 900
+  beside the hexagon mark in `assets/logo-mark.svg`.
 
 ---
 
-## 7. Wiring reference
+## 8. Wiring reference
 
 **Google Analytics 4** — `G-46QJH4C15V`. `js/script.js` loads gtag **only**
-when `/(^|\.)engineeringxyz\.com$/` matches the hostname, so staging, previews,
-and localhost never reach reporting. On landing it stores `utm_source`,
+when `/(^|\.)engineeringxyz\.com$/` matches the hostname, so previews and
+localhost never reach reporting. On landing it stores `utm_source`,
 `utm_medium`, `utm_campaign`, `utm_content`, `utm_term`, and `gclid` in
 `sessionStorage` under `exyz_campaign` and attaches them to every event. One
 delegated click listener fires `gtag('event', el.dataset.gaEvent, …)` for any
-element carrying `data-ga-event`.
+element with `data-ga-event`.
 
 Mark as Key events in the GA4 UI: `contact_form_submit`, `resource_download`,
 `phone_click`, `email_click`. The first two fire only after the server returns
@@ -217,8 +245,8 @@ Mark as Key events in the GA4 UI: `contact_form_submit`, `resource_download`,
 **Contact form backend** — Google Apps Script web app. Posts
 `URLSearchParams` with **no `Content-Type` header**: that keeps it a simple
 CORS request, and Apps Script does not answer preflight `OPTIONS`. Adding a
-JSON content type breaks it silently. The field contract was verified against
-the deployed script's source:
+JSON content type breaks it silently. Contract verified against the deployed
+script's source:
 
 | Field | Required | Accepted values |
 |---|---|---|
@@ -233,113 +261,69 @@ the deployed script's source:
 | `website` | — | honeypot, must be empty |
 | `elapsed_ms` | — | ms since page load, must be ≥ 3000 |
 
-The backend returns `{ok:false, code:"VALIDATION_ERROR", errors:{field:msg}}`
-on a bad payload; `showAlert()` renders those per-field messages rather than a
-generic failure, so a future contract change is diagnosable from the browser.
+A bad payload returns `{ok:false, code:"VALIDATION_ERROR", errors:{field:msg}}`;
+`showAlert()` renders those per-field messages rather than a generic failure,
+so a future contract change is diagnosable from the browser.
 
-If you edit the Apps Script, you must **deploy a new version** — saving alone
+If you edit the Apps Script you must **deploy a new version** — saving alone
 does not update the live web app. The Gmail send quota is 100 emails/day.
 
 ---
 
-## 8. Go-live steps
-
-Do this as a **separate commit** from the build, only when the review at
-`/v3/` is signed off.
-
-1. Preserve the old pages for rollback:
-   ```bash
-   git mv public/index.html public/index-old.html
-   git mv public/about.html public/about-old.html
-   git mv public/services.html public/services-old.html
-   git mv public/contact.html public/contact-old.html
-   ```
-2. Move the redesign up:
-   ```bash
-   git mv public/v3/index.html public/v3/services.html public/v3/projects.html \
-          public/v3/about.html public/v3/resources.html public/v3/contact.html public/
-   git mv public/v3/llms.txt public/
-   cp -r public/v3/assets/* public/assets/
-   cp public/v3/css/style.css public/css/style.css
-   cp public/v3/js/script.js public/js/script.js
-   ```
-   The old `css/style.css` and `js/script.js` serve the retired pages. If you
-   keep `*-old.html` around, copy the new files under different names instead
-   and update the six pages' `<link>`/`<script>` paths.
-3. Remove every `<meta name="robots" content="noindex" />` from the six pages.
-4. Update each `<link rel="canonical">` and `og:url` from
-   `https://www.engineeringxyz.com/v3/…` to the real path. Same for the
-   `@id`/`url`/`item` values in the JSON-LD on every page.
-5. Drop the three `Disallow: /v3/` lines from `public/robots.txt`, and replace
-   `public/sitemap.xml` with the six new URLs plus `privacy.html`.
-6. Add redirects for retired URLs that have inbound links. GitHub Pages has no
-   server-side redirects, so each old path becomes a small HTML file:
-   ```html
-   <!DOCTYPE html>
-   <html lang="en">
-     <head>
-       <meta charset="utf-8" />
-       <title>Moved — EngineeringXYZ</title>
-       <link rel="canonical" href="https://www.engineeringxyz.com/projects.html" />
-       <meta http-equiv="refresh" content="0; url=/projects.html" />
-       <meta name="robots" content="noindex" />
-     </head>
-     <body>
-       <p>This page has moved to <a href="/projects.html">Projects</a>.</p>
-     </body>
-   </html>
-   ```
-   Needed at least for `portfolio.html` → `projects.html` and
-   `testimonials.html` → `about.html`. Consider `case-study.html`,
-   `insights.html`, and `fixture-checklist.html` too.
-7. Delete `public/v3/`.
-8. Resubmit the sitemap in Search Console.
-
 ## 9. Rollback
 
-Before go-live there is nothing to roll back — the live site is untouched.
-
-After go-live, if something is wrong:
+If the new site needs to come down, revert the go-live commit:
 
 ```bash
 git revert <go-live-commit-sha>
 git push
 ```
 
-Pages redeploys the previous `./public` within a minute or two. The
-`*-old.html` files from step 1 are a second safety net: they stay in the repo,
-so the previous homepage can be restored by renaming one file even if the
-revert is messy.
+Pages redeploys the previous `./public` within a minute or two.
 
----
+If a revert is messy, the `*-old.html` files are a second safety net — they
+are still in the repo. Restoring the previous homepage by hand is:
 
-## 10. Verification performed on this build
+```bash
+git mv public/index.html public/index-new.html
+git mv public/index-old.html public/index.html
+git push
+```
 
-Run from the repo root against a local server
+Note that `index-old.html` references `css/legacy.css` and `js/legacy.js`,
+both of which are still present, so it renders correctly on its own.
+
+## 10. Verification performed
+
+Run against a local server
 (`python -m http.server 8765 --directory public`):
 
-- All six pages load with **zero console errors** and no failed requests.
-- Every internal link and in-page anchor resolves; no `.dc.html` references.
-- `grep -ri "info@engineeringxyz" public/v3/` → no matches.
-- No file or directory under `public/v3/` contains a space.
-- Each page's JSON-LD parses as valid JSON.
-- FAQ JSON-LD matches the visible `<dd>` text **byte for byte**, all five
-  entries.
-- `header`/`main`/`footer` are siblings on all six pages; one `h1` each; no
-  skipped heading levels.
-- Every `<img>` has `alt`, `width`, and `height`.
-- Contact form posts to the live endpoint and returns `{"ok":true}`.
-- Resource form payload (with `company` and `category: "other"`) returns
-  `{"ok":true}`.
-- A deliberately bad payload returns `VALIDATION_ERROR` with per-field
-  `errors`, which the UI renders.
+- All six pages return 200 with **zero console errors** and no failed
+  requests; CSS, JS, logo, and hero all load from the new root paths.
+- All five redirect stubs return 200, carry `noindex, follow`, and canonical
+  to the correct new page.
+- `privacy.html` and `404.html` still render on `css/legacy.css`.
+- Canonicals are absolute root URLs on all six pages; none carries `noindex`;
+  no `/v3/` reference survives anywhere.
+- JSON-LD parses on every page; the Home `@graph` has 4 nodes, a 6-service
+  catalogue, and 5 FAQ entries.
+- FAQ JSON-LD matches the visible `<dd>` text **byte for byte**, all five.
+- `header`/`main`/`footer` siblings on all six pages; one `h1` each; no
+  skipped heading levels; every `<img>` has `alt`, `width`, `height`.
+- `grep -rn "info@engineeringxyz" public/` → no matches (the legacy pages and
+  `translations.js` were corrected to `mwu@` during go-live).
+- No `.dc.html` reference anywhere; no path contains a space.
+- Contact form posts to the live endpoint and returns `{"ok":true}`; the
+  resource payload (`company` + `category: "other"`) also returns
+  `{"ok":true}`; a bad payload returns `VALIDATION_ERROR` with per-field
+  errors, which the UI renders.
 - Honeypot submission makes no network request; the field is off-screen,
   `tabindex="-1"`, `aria-hidden`.
 - Client-side validation blocks submission, shows inline messages, and moves
   focus to the first invalid field.
 - gtag does not load on localhost.
-- Hamburger appears below 1160px and the desktop nav does not wrap above it.
+- Hamburger appears below 1160px; the desktop nav does not wrap above it.
 - No horizontal overflow at 375px on any page.
 
-Two test rows were submitted to the live Sheet during this check, both named
-**"ZZ TEST DELETE ME"** — delete them and the two notification emails.
+Two test rows were submitted to the live Sheet during earlier checks, both
+named **"ZZ TEST DELETE ME"** — delete them and the two notification emails.

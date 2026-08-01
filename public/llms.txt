@@ -11,11 +11,9 @@ engineering. Every engagement is led directly by Dr. SaiKit (Marco) Wu, Ph.D.
 engineering professionals when a project's scope requires it. Clients keep a
 single point of accountability.
 
+Site: https://www.engineeringxyz.com
 Contact: mwu@engineeringxyz.com · 760-515-1517
 Location: Irvine, CA. Southern California on-site; remote clients nationwide.
-
-Note: this file describes the redesigned site while it is staged at /v3/. It
-moves to the site root at go-live.
 
 ## Services
 

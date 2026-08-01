@@ -1,14 +1,14 @@
-# robots.txt for EngineeringXYZ
-# Lives at the site root — robots.txt is only valid there.
-#
-# /v3/ is the staging copy of the site redesign. It is disallowed here, and
-# every page under it also carries <meta name="robots" content="noindex">, so
-# the staging copy is never indexed as duplicate content. Remove the /v3/
-# rules at go-live, when those pages move up to the root.
+# robots.txt for EngineeringXYZ — https://www.engineeringxyz.com
+# Lives at the site root; robots.txt is only valid there.
 
-# Search and AI crawlers that are explicitly welcome.
+# Search and AI crawlers that are explicitly welcome. Named individually so a
+# future blanket restriction cannot silently cut off AI answer engines, which
+# are a deliberate acquisition channel for this site.
 User-agent: Googlebot
+User-agent: Googlebot-Image
 User-agent: Bingbot
+User-agent: DuckDuckBot
+User-agent: Applebot
 User-agent: GPTBot
 User-agent: OAI-SearchBot
 User-agent: ChatGPT-User
@@ -20,17 +20,19 @@ User-agent: Perplexity-User
 User-agent: Google-Extended
 User-agent: Applebot-Extended
 User-agent: CCBot
+User-agent: Meta-ExternalAgent
+User-agent: Amazonbot
 Allow: /
-Disallow: /v3/
 Disallow: /lab/
 Disallow: /thank-you/
+Disallow: /thankyou.html
 Disallow: /*?utm_
 
 User-agent: *
 Allow: /
-Disallow: /v3/
 Disallow: /lab/
 Disallow: /thank-you/
+Disallow: /thankyou.html
 Disallow: /*?utm_
 
 Sitemap: https://www.engineeringxyz.com/sitemap.xml
