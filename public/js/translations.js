@@ -187,7 +187,7 @@ const translations = {
       'Data is stored on secure services (e.g., Google/Firebase). We do not sell personal data. We may share with service providers (e.g., email delivery, analytics) under data processing agreements.',
     privacy_rights_title: 'Your rights',
     privacy_rights_content:
-      'If you are in California (CCPA) or other regions with privacy laws (e.g., GDPR), you may request access, correction, deletion, or restriction of your data. Contact us at <a href="mailto:mwu@engineeringxyz.com">mwu@engineeringxyz.com</a>.',
+      'If you are in California (CCPA) or other regions with privacy laws (e.g., GDPR), you may request access, correction, deletion, or restriction of your data. Contact us at <a href="mailto:info@engineeringxyz.com">info@engineeringxyz.com</a>.',
     privacy_cookies_title: 'Cookies & tracking',
     privacy_cookies_content:
       'We use GA4 / Meta Pixel / LinkedIn Insight Tag for analytics and advertising. You can manage cookies in your browser settings.',
@@ -196,7 +196,7 @@ const translations = {
       'We keep personal data only as long as necessary for the purposes outlined above, unless a longer retention is required by law.',
     privacy_contact_title: 'Contact',
     privacy_contact_content:
-      'For privacy questions, email <a href="mailto:mwu@engineeringxyz.com">mwu@engineeringxyz.com</a>.',
+      'For privacy questions, email <a href="mailto:info@engineeringxyz.com">info@engineeringxyz.com</a>.',
     // Resume page
     resume_title: 'Submit Your Resume & Portfolio',
     resume_intro:
@@ -385,7 +385,7 @@ const translations = {
       '資料儲存於安全服務（例如 Google/Firebase）。我們不出售個人資料。可能與服務提供者（例如電子郵件、分析）在資料處理協議下共享。',
     privacy_rights_title: '您的權利',
     privacy_rights_content:
-      '如果您位於加州（CCPA）或其他隱私法區域（如 GDPR），您可以要求存取、更正、刪除或限制您的資料。請聯繫我們：<a href="mailto:mwu@engineeringxyz.com">mwu@engineeringxyz.com</a>。',
+      '如果您位於加州（CCPA）或其他隱私法區域（如 GDPR），您可以要求存取、更正、刪除或限制您的資料。請聯繫我們：<a href="mailto:info@engineeringxyz.com">info@engineeringxyz.com</a>。',
     privacy_cookies_title: 'Cookie 與追蹤',
     privacy_cookies_content:
       '我們使用 GA4/Meta Pixel/LinkedIn Insight Tag 進行分析與廣告。您可在瀏覽器設定中管理 cookie。',
@@ -394,7 +394,7 @@ const translations = {
       '我們僅在達成上述目的所需期間保留個人資料，除非法律規定更長期限。',
     privacy_contact_title: '聯絡我們',
     privacy_contact_content:
-      '如有隱私問題，請寄信至 <a href="mailto:mwu@engineeringxyz.com">mwu@engineeringxyz.com</a>。',
+      '如有隱私問題，請寄信至 <a href="mailto:info@engineeringxyz.com">info@engineeringxyz.com</a>。',
     // Resume page
     resume_title: '提交您的履歷與作品集',
     resume_intro:
@@ -581,7 +581,7 @@ const translations = {
       '데이터는 안전한 서비스(예: Google/Firebase)에 저장됩니다. 개인 정보를 판매하지 않습니다. 서비스 제공업체(예: 이메일 전달, 분석)와 데이터 처리 계약 하에 공유할 수 있습니다.',
     privacy_rights_title: '귀하의 권리',
     privacy_rights_content:
-      '캘리포니아(CCPA)나 GDPR과 같은 개인정보 보호 법률이 있는 지역에 거주하는 경우, 데이터 접근, 수정, 삭제 또는 제한을 요청할 수 있습니다. <a href="mailto:mwu@engineeringxyz.com">mwu@engineeringxyz.com</a> 으로 연락 주세요.',
+      '캘리포니아(CCPA)나 GDPR과 같은 개인정보 보호 법률이 있는 지역에 거주하는 경우, 데이터 접근, 수정, 삭제 또는 제한을 요청할 수 있습니다. <a href="mailto:info@engineeringxyz.com">info@engineeringxyz.com</a> 으로 연락 주세요.',
     privacy_cookies_title: '쿠키 및 추적',
     privacy_cookies_content:
       'GA4 / Meta Pixel / LinkedIn Insight Tag를 사용하여 분석 및 광고를 합니다. 브라우저 설정에서 쿠키를 관리할 수 있습니다.',
@@ -590,7 +590,7 @@ const translations = {
       '위 목적에 필요한 기간 동안만 개인 데이터를 보관하며, 법에서 더 긴 보관을 요구하는 경우를 제외합니다.',
     privacy_contact_title: '문의',
     privacy_contact_content:
-      '개인 정보 보호 관련 문의는 <a href="mailto:mwu@engineeringxyz.com">mwu@engineeringxyz.com</a> 으로 연락 주세요.',
+      '개인 정보 보호 관련 문의는 <a href="mailto:info@engineeringxyz.com">info@engineeringxyz.com</a> 으로 연락 주세요.',
     // Resume page
     resume_title: '이력서 및 포트폴리오 제출',
     resume_intro:
@@ -783,7 +783,7 @@ const translations = {
       'Los datos se almacenan en servicios seguros (por ejemplo, Google/Firebase). No vendemos datos personales. Podemos compartirlos con proveedores de servicios (por ejemplo, entrega de correo electrónico, análisis) en virtud de acuerdos de procesamiento de datos.',
     privacy_rights_title: 'Sus derechos',
     privacy_rights_content:
-      'Si se encuentra en California (CCPA) u otras regiones con leyes de privacidad (como GDPR), puede solicitar acceso, corrección, eliminación o restricción de sus datos. Contáctenos en <a href="mailto:mwu@engineeringxyz.com">mwu@engineeringxyz.com</a>.',
+      'Si se encuentra en California (CCPA) u otras regiones con leyes de privacidad (como GDPR), puede solicitar acceso, corrección, eliminación o restricción de sus datos. Contáctenos en <a href="mailto:info@engineeringxyz.com">info@engineeringxyz.com</a>.',
     privacy_cookies_title: 'Cookies y seguimiento',
     privacy_cookies_content:
       'Utilizamos GA4 / Meta Pixel / LinkedIn Insight Tag para análisis y publicidad. Puede gestionar las cookies en la configuración de su navegador.',
@@ -792,7 +792,7 @@ const translations = {
       'Conservamos los datos personales solo durante el tiempo necesario para los fines descritos anteriormente, a menos que la ley exija un período más largo.',
     privacy_contact_title: 'Contacto',
     privacy_contact_content:
-      'Para preguntas de privacidad, envíe un correo a <a href="mailto:mwu@engineeringxyz.com">mwu@engineeringxyz.com</a>.',
+      'Para preguntas de privacidad, envíe un correo a <a href="mailto:info@engineeringxyz.com">info@engineeringxyz.com</a>.',
     // Resume page
     resume_title: 'Envíe su currículum y portafolio',
     resume_intro:

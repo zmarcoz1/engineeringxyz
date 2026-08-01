@@ -233,7 +233,7 @@ const applyStructuredData = () => {
     image: activeMeta.image || DEFAULT_SOCIAL_IMAGE,
     description: activeMeta.description,
     telephone: "+1-760-515-1517",
-    email: "mwu@engineeringxyz.com",
+    email: "info@engineeringxyz.com",
     areaServed: "US",
     address: {
       "@type": "PostalAddress",

@@ -12,7 +12,7 @@ engineering professionals when a project's scope requires it. Clients keep a
 single point of accountability.
 
 Site: https://www.engineeringxyz.com
-Contact: mwu@engineeringxyz.com · 760-515-1517
+Contact: info@engineeringxyz.com · 760-515-1517
 Location: Irvine, CA. Southern California on-site; remote clients nationwide.
 
 ## Services
@@ -68,8 +68,6 @@ Two U.S. patent applications are in process (filed July 2025).
   benchtop production station.
 - `/about.html` — the consultancy, founder background, what working with
   EngineeringXYZ looks like, experience areas.
-- `/resources.html` — Fixture Design Checklist (by email) and six open guides
-  on build-readiness, prototype planning, inspection fixtures, and scoping.
 - `/contact.html` — project inquiry form and direct contact details.
 
 ## Note on company claims

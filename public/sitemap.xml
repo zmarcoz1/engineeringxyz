@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  The six canonical pages plus the privacy policy. Retired URLs
+  The five listed canonical pages plus the privacy policy. Retired URLs
   (portfolio, testimonials, case-study, insights, fixture-checklist) are
   redirect stubs marked noindex and are deliberately absent.
 -->
@@ -25,12 +25,6 @@
   </url>
   <url>
     <loc>https://www.engineeringxyz.com/about.html</loc>
-    <lastmod>2026-07-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.engineeringxyz.com/resources.html</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

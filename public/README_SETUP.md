@@ -44,7 +44,7 @@
 ## 三、建立 Google Apps Script 郵件通知
 
 1. 前往 [Google Apps Script](https://script.google.com) 建立一個新專案。
-2. 在 `Code.gs` 中貼上 `apps-script/Code.gs` 的全部程式碼，將 `SHARED_SECRET` 常數設定為與 Cloud Function 相同的字串，並修改 `RECIPIENTS` 陣列為你的通知信箱（此專案預設為 `mwu@engineeringxyz.com` 和 `engineeringxyz.com@gmail.com`）。
+2. 在 `Code.gs` 中貼上 `apps-script/Code.gs` 的全部程式碼，將 `SHARED_SECRET` 常數設定為與 Cloud Function 相同的字串，並修改 `RECIPIENTS` 陣列為你的通知信箱（此專案預設為 `info@engineeringxyz.com` 和 `engineeringxyz.com@gmail.com`）。
 3. 點擊「部署」→「新增部署」，選擇 **Web 應用程式**。
    * 版本說明可以填寫 `v1`。
    * 執行應用程式的身分選擇 **本人**。

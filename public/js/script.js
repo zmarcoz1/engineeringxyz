@@ -354,7 +354,7 @@
       var fileLine = document.createElement("p");
       fileLine.textContent =
         "Your attachment was not sent with this form. Email it to " +
-        "mwu@engineeringxyz.com and it will be matched to your inquiry.";
+        "info@engineeringxyz.com and it will be matched to your inquiry.";
       wrap.appendChild(fileLine);
     }
 
@@ -444,7 +444,7 @@
           showAlert(
             form,
             (out && out.message) ||
-              "The message could not be sent. Email mwu@engineeringxyz.com " +
+              "The message could not be sent. Email info@engineeringxyz.com " +
                 "or call 760-515-1517.",
             out && out.errors
           );
@@ -454,7 +454,7 @@
           button.textContent = originalLabel;
           showAlert(
             form,
-            "The message could not be sent. Email mwu@engineeringxyz.com " +
+            "The message could not be sent. Email info@engineeringxyz.com " +
               "or call 760-515-1517."
           );
         });
@@ -483,7 +483,7 @@
       "The Fixture Design Checklist will be sent to " +
       email +
       " within one business day. If it does not arrive, check your spam " +
-      "folder or write to mwu@engineeringxyz.com.";
+      "folder or write to info@engineeringxyz.com.";
     wrap.appendChild(line);
 
     panel.innerHTML = "";
@@ -573,7 +573,7 @@
           showAlert(
             form,
             (out && out.message) ||
-              "The request could not be sent. Email mwu@engineeringxyz.com.",
+              "The request could not be sent. Email info@engineeringxyz.com.",
             out && out.errors
           );
         })
@@ -582,7 +582,7 @@
           button.textContent = originalLabel;
           showAlert(
             form,
-            "The request could not be sent. Email mwu@engineeringxyz.com."
+            "The request could not be sent. Email info@engineeringxyz.com."
           );
         });
     });
