@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Abstract diagram: repeatable part presentation against fixed datums for optical inspection">
+<rect width="800" height="500" fill="#0a304e"></rect>
+<g stroke="#ffffff" stroke-width="0.5" opacity="0.07">
+<line x1="0" y1="0" x2="0" y2="500"></line><line x1="50" y1="0" x2="50" y2="500"></line><line x1="100" y1="0" x2="100" y2="500"></line><line x1="150" y1="0" x2="150" y2="500"></line><line x1="200" y1="0" x2="200" y2="500"></line><line x1="250" y1="0" x2="250" y2="500"></line><line x1="300" y1="0" x2="300" y2="500"></line><line x1="350" y1="0" x2="350" y2="500"></line><line x1="400" y1="0" x2="400" y2="500"></line><line x1="450" y1="0" x2="450" y2="500"></line><line x1="500" y1="0" x2="500" y2="500"></line><line x1="550" y1="0" x2="550" y2="500"></line><line x1="600" y1="0" x2="600" y2="500"></line><line x1="650" y1="0" x2="650" y2="500"></line><line x1="700" y1="0" x2="700" y2="500"></line><line x1="750" y1="0" x2="750" y2="500"></line>
+<line x1="0" y1="0" x2="800" y2="0"></line><line x1="0" y1="50" x2="800" y2="50"></line><line x1="0" y1="100" x2="800" y2="100"></line><line x1="0" y1="150" x2="800" y2="150"></line><line x1="0" y1="200" x2="800" y2="200"></line><line x1="0" y1="250" x2="800" y2="250"></line><line x1="0" y1="300" x2="800" y2="300"></line><line x1="0" y1="350" x2="800" y2="350"></line><line x1="0" y1="400" x2="800" y2="400"></line><line x1="0" y1="450" x2="800" y2="450"></line>
+</g>
+<text x="60" y="80" font-family="Nunito,Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="2.5" fill="#cba65a">REPEATABLE PART PRESENTATION</text>
+
+<circle cx="400" cy="150" r="30" fill="none" stroke="#9fbacd" stroke-width="3"></circle>
+<circle cx="400" cy="150" r="12" fill="none" stroke="#9fbacd" stroke-width="2"></circle>
+<path d="M400 185 L400 250" stroke="#cba65a" stroke-width="2" stroke-dasharray="7 6"></path>
+<path d="M392 240 L400 254 L408 240 Z" fill="#cba65a"></path>
+<text x="445" y="145" font-family="Arial,sans-serif" font-size="14" fill="#9fbacd">Fixed optical axis</text>
+<text x="445" y="165" font-family="Arial,sans-serif" font-size="14" fill="#9fbacd">Existing camera and optics retained</text>
+
+<rect x="310" y="270" width="180" height="70" rx="4" fill="none" stroke="#ffffff" stroke-width="3"></rect>
+<text x="352" y="312" font-family="Arial,sans-serif" font-size="14" letter-spacing="1" fill="#ffffff">PART ENVELOPE</text>
+
+<path d="M270 340 L530 340" stroke="#cba65a" stroke-width="4"></path>
+<path d="M310 360 L310 400 M490 360 L490 400" stroke="#cba65a" stroke-width="2"></path>
+<text x="270" y="392" font-family="Nunito,Arial,sans-serif" font-size="14" font-weight="700" fill="#cba65a">A</text>
+<text x="516" y="392" font-family="Nunito,Arial,sans-serif" font-size="14" font-weight="700" fill="#cba65a">B</text>
+<text x="336" y="392" font-family="Arial,sans-serif" font-size="13" fill="#9fbacd">Locating datums</text>
+
+<path d="M150 305 L285 305" stroke="#9fbacd" stroke-width="2"></path>
+<path d="M273 297 L287 305 L273 313 Z" fill="#9fbacd"></path>
+<text x="150" y="292" font-family="Arial,sans-serif" font-size="13" fill="#9fbacd">Operator load</text>
+<text x="60" y="452" font-family="Arial,sans-serif" font-size="15" fill="#9fbacd">Each part locates against the same datums, so measurement no longer depends on staging technique.</text>
+<text x="60" y="478" font-family="Arial,sans-serif" font-size="12" letter-spacing="1.5" fill="#5e7f96">FILING-SAFE ABSTRACT VIEW — CLIENT HARDWARE NOT SHOWN</text>
+</svg>

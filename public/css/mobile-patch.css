@@ -1,0 +1,155 @@
+/* ==========================================================================
+   EngineeringXYZ — mobile remediation patch
+   ==========================================================================
+   Append this to the END of public/css/style.css (it only overrides; it does
+   not replace anything). Every rule below fixes a defect found by reading the
+   current stylesheet — the line references are to style.css as of f4e22c9.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. iOS ZOOM ON FOCUS  — the highest-impact bug on the conversion path.
+   .field input/select/textarea are 15px. Safari on iOS zooms the whole page
+   whenever a focused control is under 16px, and it does not zoom back out.
+   On the contact form that means the visitor loses the layout mid-form.
+   -------------------------------------------------------------------------- */
+.field input,
+.field select,
+.field textarea {
+  font-size: 16px;
+}
+
+/* --------------------------------------------------------------------------
+   2. GRID OVERFLOW BELOW 340px
+   minmax(300px, 1fr) cannot shrink under 300px, so on a 320px device
+   (iPhone SE) with --pad-x:20px there is only 280px available and the grid
+   pushes the page wider than the screen — horizontal scroll on every page.
+   min() lets the track collapse while keeping the desktop behaviour.
+   -------------------------------------------------------------------------- */
+.card-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+}
+
+.proof__grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+}
+
+.tick-list--grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+}
+
+.form-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
+}
+
+/* --------------------------------------------------------------------------
+   3. FLEX min-width OVERFLOW
+   Several columns declare min-width:320px. At 320px viewport minus 40px of
+   page padding only 280px remains, so these force the page wide.
+   -------------------------------------------------------------------------- */
+.service__text,
+.case__text,
+.form-panel,
+.about-intro__text,
+.resource-feature__text {
+  min-width: min(100%, 300px);
+}
+
+.deliverables,
+.case__media,
+.about-intro__media,
+.split__media,
+.split__text,
+.founder__text,
+.contact-aside,
+.resource-form,
+.footer-about {
+  min-width: min(100%, 260px);
+}
+
+/* --------------------------------------------------------------------------
+   4. REVERSED SPLIT ROWS STACK IN THE WRONG ORDER
+   .split--reverse uses flex-direction:row-reverse. When the row wraps on a
+   phone the items stack bottom-up, so alternating case studies show
+   text-then-image on some rows and image-then-text on others. Force one
+   consistent order — image first — on small screens.
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .split--reverse {
+    flex-direction: row;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. TAP TARGETS UNDER 44px  (WCAG 2.5.8)
+   Footer links are min-height:32px.
+   -------------------------------------------------------------------------- */
+.footer-col a {
+  min-height: 44px;
+}
+
+.link-arrow,
+.link-underline {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.consent {
+  min-height: 44px;
+  align-items: center;
+}
+
+.consent input {
+  width: 22px;
+  height: 22px;
+}
+
+/* --------------------------------------------------------------------------
+   6. HERO ON MOBILE
+   min-height:72vh uses the large viewport on iOS, so the hero jumps as the
+   browser chrome hides. svh is stable. (The 720px rule already sets
+   min-height:0 — this covers tablets between 721px and 900px.)
+   -------------------------------------------------------------------------- */
+@supports (height: 100svh) {
+  .hero {
+    min-height: 72svh;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   7. FULL-WIDTH CTAs ON NARROW SCREENS
+   Two uppercase buttons side by side wrap into a ragged block under 420px.
+   -------------------------------------------------------------------------- */
+@media (max-width: 420px) {
+  .btn-row {
+    display: grid;
+    gap: 12px;
+  }
+
+  .btn-row .btn {
+    width: 100%;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   8. LONG STRINGS
+   Part numbers, URLs and email addresses can exceed a narrow column.
+   -------------------------------------------------------------------------- */
+h1, h2, h3, p, li, dd, figcaption, address {
+  overflow-wrap: break-word;
+}
+
+/* --------------------------------------------------------------------------
+   9. SAFETY NET
+   Keep this LAST. If anything still overflows, this prevents the sideways
+   scroll while you locate the cause — it is not a substitute for fixing it.
+   -------------------------------------------------------------------------- */
+body {
+  overflow-x: hidden;
+}
