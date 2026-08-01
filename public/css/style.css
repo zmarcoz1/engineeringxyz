@@ -1537,8 +1537,20 @@ summary:focus-visible {
 .footer-social {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  flex-wrap: wrap;
+  gap: 8px 16px;
   margin-top: 4px;
+}
+
+.consent a,
+.field-hint a {
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.consent a:hover,
+.field-hint a:hover {
+  color: var(--gold);
 }
 
 .footer-social svg {

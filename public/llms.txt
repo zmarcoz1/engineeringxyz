@@ -4,75 +4,76 @@
 > prototypes, fixtures, inspection systems, and production equipment from
 > concept — or from a stalled state — to build-ready engineering.
 
-EngineeringXYZ helps manufacturers and hardware teams move stalled machine,
-fixture, inspection, and production-equipment projects toward build-ready
-engineering. Every engagement is led directly by Dr. SaiKit (Marco) Wu, Ph.D.
-(mechanical engineering), supported by a trusted network of specialized
-engineering professionals when a project's scope requires it. Clients keep a
-single point of accountability.
-
-Site: https://www.engineeringxyz.com
+Last updated: 2026-08-01
+Canonical site: https://engineeringxyz.com
 Contact: info@engineeringxyz.com · 760-515-1517
 Location: Irvine, CA. Southern California on-site; remote clients nationwide.
+
+EngineeringXYZ helps manufacturers and hardware teams move stalled machine,
+fixture, inspection, and production-equipment projects toward build-ready
+engineering. Every engagement is led directly by Dr. SaiKit (Marco) Wu,
+Ph.D. in mechanical engineering, with specialist support coordinated when a
+project requires it. Clients keep a single point of accountability.
 
 ## Services
 
 - **Machine Prototypes and Production Equipment** — concept layouts,
   mechanical architecture, 3D CAD, engineering drawings, vendor-ready
-  packages, build-readiness review, commissioning support.
+  packages, build-readiness review, and commissioning support.
 - **Fixture, Workholding, and Poka-Yoke Design** — fixture concepts,
-  mistake-proofing features, operator-flow improvements, tolerance and
-  interface review, fabrication drawings.
-- **Inspection and Test Systems** — inspection positioning systems,
-  test-station mechanical design, part-presentation fixtures, integration
-  with existing gauges and optics.
-- **Mechanical Design and Engineering Drawings** — 3D CAD modeling,
-  engineering drawings with GD&T as appropriate, tolerance and interface
-  review, design-for-assembly review, drawing-release support.
+  mistake-proofing, operator-flow improvements, tolerance and interface
+  review, and fabrication drawings.
+- **Inspection and Test Systems** — positioning systems, test-station
+  mechanical design, part-presentation fixtures, and integration with gauges
+  and optics.
+- **Mechanical Design and Engineering Drawings** — 3D CAD, engineering
+  drawings with GD&T as appropriate, tolerance review, design-for-assembly,
+  and drawing-release support.
 - **Manufacturing and Production Engineering Support** — equipment layouts,
-  architecture and simplification studies, design-for-assembly review,
-  vendor-ready build packages.
-- **Project Recovery and Engineering Capacity** — design review and
-  troubleshooting, project recovery assessments, overflow design and drawing
-  work, vendor coordination, handoff packages.
+  architecture and simplification studies, and vendor-ready build packages.
+- **Project Recovery and Engineering Capacity** — design review,
+  troubleshooting, overflow engineering work, vendor coordination, and
+  handoff packages.
 
 ## Process
 
 Share the current problem → review technical fit → define a focused first
-scope. Most engagements start with a design review, a concept package, or a
-single fixture; first scopes typically run two to four weeks. No large initial
-commitment is required. Confidential project information can be reviewed under
-NDA. The first conversation is a technical-fit discussion — a direct read on
-scope, risks, and fit — not a sales call.
+scope. Most engagements start with a design review, concept package, or single
+fixture. First scopes typically run two to four weeks. Confidential project
+information can be reviewed under NDA.
 
-## Documented outcomes
+## Verified public claims
 
-These are three specific projects, not typical results:
-
-- A machine concept requiring 49 motors was redesigned to deliver the same
-  required functions with 4 motors.
-- One client scheduling workflow was reduced from about two days to about
-  40 seconds.
+- One machine concept was redesigned from 49 motors to 4 while retaining the
+  required functions.
 - 10+ years of mechanical engineering and automation experience.
+- 4 U.S. patents granted and in process.
+- 10+ peer-reviewed publications.
 
-Two U.S. patent applications are in process (filed July 2025).
+Client names and proprietary project details are withheld where required for
+confidentiality. These are specific credentials and project outcomes, not
+promises of typical results.
 
-## Page map
+## Canonical page map
 
-- `/` — Home: positioning, documented outcomes, three problems solved,
-  selected work, why EngineeringXYZ, FAQ.
-- `/services.html` — the six services above, each with typical situation,
-  typical problems, benefit, and deliverables.
-- `/projects.html` — case studies: production machine architecture (49 motors
-  to 4), gantry transfer system, optical inspection positioning system,
-  benchtop production station.
-- `/about.html` — the consultancy, founder background, what working with
-  EngineeringXYZ looks like, experience areas.
-- `/contact.html` — project inquiry form and direct contact details.
+- https://engineeringxyz.com/ — positioning, selected work, testimonials,
+  process, and FAQ.
+- https://engineeringxyz.com/services.html — six mechanical engineering
+  service areas, typical problems, benefits, and deliverables.
+- https://engineeringxyz.com/projects.html — four engineering case studies.
+- https://engineeringxyz.com/about.html — consultancy and founder background,
+  credentials, working model, and experience areas.
+- https://engineeringxyz.com/contact.html — project inquiry form and direct
+  contact details.
+- https://engineeringxyz.com/privacy.html — privacy policy.
 
-## Note on company claims
+## Official profiles
+
+- LinkedIn: https://www.linkedin.com/company/engineeringxyz
+- Facebook: https://www.facebook.com/people/Engineeringxyz/61580466110112/
+
+## Claim boundaries
 
 EngineeringXYZ publishes no staff-size, office-size, revenue, or certification
 claims. It is presented as a consultancy led by an experienced principal
-engineer, supported by a network of specialists when scope requires. Client
-names and proprietary project details are withheld for confidentiality.
+engineer and supported by specialists when scope requires.

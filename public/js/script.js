@@ -46,6 +46,10 @@
     toggle.addEventListener("click", function () {
       var open = nav.classList.toggle("is-open");
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute(
+        "aria-label",
+        open ? "Close navigation menu" : "Open navigation menu"
+      );
     });
 
     /* Collapse the panel when a link inside it is followed. */
@@ -53,6 +57,7 @@
       if (event.target.closest("a") && nav.classList.contains("is-open")) {
         nav.classList.remove("is-open");
         toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open navigation menu");
       }
     });
 
@@ -60,6 +65,7 @@
       if (event.key === "Escape" && nav.classList.contains("is-open")) {
         nav.classList.remove("is-open");
         toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open navigation menu");
         toggle.focus();
       }
     });
@@ -327,7 +333,7 @@
     return errors;
   }
 
-  function showContactSuccess(form, name, hadFile) {
+  function showContactSuccess(form, name) {
     var panel = form.closest(".form-panel");
     if (!panel) {
       return;
@@ -348,15 +354,6 @@
       ? "Thank you, " + safeName + ". Your project description has been sent."
       : "Thank you. Your project description has been sent.";
     wrap.appendChild(line);
-
-    /* The backend takes form fields only — never imply a file was received. */
-    if (hadFile) {
-      var fileLine = document.createElement("p");
-      fileLine.textContent =
-        "Your attachment was not sent with this form. Email it to " +
-        "info@engineeringxyz.com and it will be matched to your inquiry.";
-      wrap.appendChild(fileLine);
-    }
 
     var reply = document.createElement("p");
     reply.textContent =
@@ -410,8 +407,6 @@
       button.disabled = true;
       button.textContent = "Sending…";
 
-      var fileInput = form.elements.attachment;
-      var hadFile = Boolean(fileInput && fileInput.files.length);
       var senderName = form.elements.name.value.trim();
 
       var payload = addCampaignFields({
@@ -435,7 +430,7 @@
               category: payload.category,
               timeline: payload.timeline || "unspecified"
             });
-            showContactSuccess(form, senderName, hadFile);
+            showContactSuccess(form, senderName);
             return;
           }
 

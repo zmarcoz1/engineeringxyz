@@ -1,33 +1,21 @@
-# robots.txt for EngineeringXYZ — https://www.engineeringxyz.com
-# Lives at the site root; robots.txt is only valid there.
+# robots.txt for EngineeringXYZ — https://engineeringxyz.com
+# Cloudflare may prepend managed Content Signals. This site welcomes search
+# and answer-engine retrieval while reserving model-training rights.
 
-# Search and AI crawlers that are explicitly welcome. Named individually so a
-# future blanket restriction cannot silently cut off AI answer engines, which
-# are a deliberate acquisition channel for this site.
-User-agent: Googlebot
-User-agent: Googlebot-Image
-User-agent: Bingbot
-User-agent: DuckDuckBot
-User-agent: Applebot
-User-agent: GPTBot
+# Retrieval and user-request crawlers used by AI answer engines.
 User-agent: OAI-SearchBot
 User-agent: ChatGPT-User
-User-agent: ClaudeBot
 User-agent: Claude-User
 User-agent: Claude-SearchBot
 User-agent: PerplexityBot
 User-agent: Perplexity-User
-User-agent: Google-Extended
-User-agent: Applebot-Extended
-User-agent: CCBot
-User-agent: Meta-ExternalAgent
-User-agent: Amazonbot
 Allow: /
 Disallow: /lab/
 Disallow: /thank-you/
 Disallow: /thankyou.html
 Disallow: /*?utm_
 
+# Conventional search engines and all other crawlers.
 User-agent: *
 Allow: /
 Disallow: /lab/
@@ -35,4 +23,4 @@ Disallow: /thank-you/
 Disallow: /thankyou.html
 Disallow: /*?utm_
 
-Sitemap: https://www.engineeringxyz.com/sitemap.xml
+Sitemap: https://engineeringxyz.com/sitemap.xml
