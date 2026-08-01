@@ -1,0 +1,82 @@
+# EngineeringXYZ
+
+> Mechanical engineering consultancy in Irvine, California. Takes machine
+> prototypes, fixtures, inspection systems, and production equipment from
+> concept — or from a stalled state — to build-ready engineering.
+
+EngineeringXYZ helps manufacturers and hardware teams move stalled machine,
+fixture, inspection, and production-equipment projects toward build-ready
+engineering. Every engagement is led directly by Dr. SaiKit (Marco) Wu, Ph.D.
+(mechanical engineering), supported by a trusted network of specialized
+engineering professionals when a project's scope requires it. Clients keep a
+single point of accountability.
+
+Contact: mwu@engineeringxyz.com · 760-515-1517
+Location: Irvine, CA. Southern California on-site; remote clients nationwide.
+
+Note: this file describes the redesigned site while it is staged at /v3/. It
+moves to the site root at go-live.
+
+## Services
+
+- **Machine Prototypes and Production Equipment** — concept layouts,
+  mechanical architecture, 3D CAD, engineering drawings, vendor-ready
+  packages, build-readiness review, commissioning support.
+- **Fixture, Workholding, and Poka-Yoke Design** — fixture concepts,
+  mistake-proofing features, operator-flow improvements, tolerance and
+  interface review, fabrication drawings.
+- **Inspection and Test Systems** — inspection positioning systems,
+  test-station mechanical design, part-presentation fixtures, integration
+  with existing gauges and optics.
+- **Mechanical Design and Engineering Drawings** — 3D CAD modeling,
+  engineering drawings with GD&T as appropriate, tolerance and interface
+  review, design-for-assembly review, drawing-release support.
+- **Manufacturing and Production Engineering Support** — equipment layouts,
+  architecture and simplification studies, design-for-assembly review,
+  vendor-ready build packages.
+- **Project Recovery and Engineering Capacity** — design review and
+  troubleshooting, project recovery assessments, overflow design and drawing
+  work, vendor coordination, handoff packages.
+
+## Process
+
+Share the current problem → review technical fit → define a focused first
+scope. Most engagements start with a design review, a concept package, or a
+single fixture; first scopes typically run two to four weeks. No large initial
+commitment is required. Confidential project information can be reviewed under
+NDA. The first conversation is a technical-fit discussion — a direct read on
+scope, risks, and fit — not a sales call.
+
+## Documented outcomes
+
+These are three specific projects, not typical results:
+
+- A machine concept requiring 49 motors was redesigned to deliver the same
+  required functions with 4 motors.
+- One client scheduling workflow was reduced from about two days to about
+  40 seconds.
+- 10+ years of mechanical engineering and automation experience.
+
+Two U.S. patent applications are in process (filed July 2025).
+
+## Page map
+
+- `/` — Home: positioning, documented outcomes, three problems solved,
+  selected work, why EngineeringXYZ, FAQ.
+- `/services.html` — the six services above, each with typical situation,
+  typical problems, benefit, and deliverables.
+- `/projects.html` — case studies: production machine architecture (49 motors
+  to 4), gantry transfer system, optical inspection positioning system,
+  benchtop production station.
+- `/about.html` — the consultancy, founder background, what working with
+  EngineeringXYZ looks like, experience areas.
+- `/resources.html` — Fixture Design Checklist (by email) and six open guides
+  on build-readiness, prototype planning, inspection fixtures, and scoping.
+- `/contact.html` — project inquiry form and direct contact details.
+
+## Note on company claims
+
+EngineeringXYZ publishes no staff-size, office-size, revenue, or certification
+claims. It is presented as a consultancy led by an experienced principal
+engineer, supported by a network of specialists when scope requires. Client
+names and proprietary project details are withheld for confidentiality.

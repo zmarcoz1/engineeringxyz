@@ -1,6 +1,36 @@
 # robots.txt for EngineeringXYZ
+# Lives at the site root — robots.txt is only valid there.
+#
+# /v3/ is the staging copy of the site redesign. It is disallowed here, and
+# every page under it also carries <meta name="robots" content="noindex">, so
+# the staging copy is never indexed as duplicate content. Remove the /v3/
+# rules at go-live, when those pages move up to the root.
+
+# Search and AI crawlers that are explicitly welcome.
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-User
+User-agent: Claude-SearchBot
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+Allow: /
+Disallow: /v3/
+Disallow: /lab/
+Disallow: /thank-you/
+Disallow: /*?utm_
+
 User-agent: *
 Allow: /
+Disallow: /v3/
+Disallow: /lab/
+Disallow: /thank-you/
+Disallow: /*?utm_
 
-# Point crawlers to the sitemap
-Sitemap: https://zmarcoz1.github.io/engineeringxyz/sitemap.xml
+Sitemap: https://www.engineeringxyz.com/sitemap.xml
