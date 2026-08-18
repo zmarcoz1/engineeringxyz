@@ -1159,7 +1159,7 @@ summary:focus-visible {
 }
 
 .founder__linkedin a {
-  color: var(--blue);
+  color: var(--navy);
   font-weight: 800;
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
@@ -1167,7 +1167,7 @@ summary:focus-visible {
 
 .founder__linkedin a:hover,
 .founder__linkedin a:focus-visible {
-  color: var(--navy);
+  color: var(--gold);
 }
 
 .founder__bio {
@@ -1513,7 +1513,7 @@ summary:focus-visible {
   width: 100%;
   min-width: 760px;
   border-collapse: collapse;
-  color: var(--ink);
+  color: var(--body);
 }
 
 .scope-table th,
@@ -1719,4 +1719,66 @@ summary:focus-visible {
   .stat-row {
     gap: 24px;
   }
+}
+
+/* --------------------------------------------------------------------------
+   Alignment corrections: keep every section's text on the same left edge
+   -------------------------------------------------------------------------- */
+
+.scope-body > * {
+  max-width: 78ch;
+}
+
+.scope-body .tick-list li {
+  max-width: 78ch;
+}
+
+.scope-notice a,
+.footer-scope a {
+  color: inherit;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.scope-notice--dark a {
+  color: var(--cream);
+}
+
+.founder-head {
+  margin-bottom: 28px;
+}
+
+.founder-head h2 {
+  font-size: clamp(24px, 3vw, 30px);
+  margin-bottom: 6px;
+}
+
+.founder-head .founder__role {
+  margin-bottom: 10px;
+}
+
+.founder-head .founder__linkedin {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.founder__text .founder__bio {
+  margin-top: 0;
+}
+
+.tick-list--grid {
+  align-content: start;
+}
+
+.split--top > * {
+  margin-top: 0;
+}
+
+.split--top .tick-list--grid {
+  padding-top: 6px;
+}
+
+.founder {
+  align-items: flex-start;
 }
