@@ -390,6 +390,18 @@
       return;
     }
 
+    var entityType = form.elements.entity_type;
+    var governmentNote = document.getElementById("government-agency-note");
+
+    function updateGovernmentNote() {
+      if (governmentNote) {
+        governmentNote.hidden = entityType.value !== "government-agency";
+      }
+    }
+
+    entityType.addEventListener("change", updateGovernmentNote);
+    updateGovernmentNote();
+
     form.addEventListener("submit", function (event) {
       event.preventDefault();
 
