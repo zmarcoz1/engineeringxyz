@@ -1782,3 +1782,123 @@ summary:focus-visible {
 .founder {
   align-items: flex-start;
 }
+
+/* --- Scope of Services: two-up cards --- */
+
+.scope-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: start;
+  gap: 20px;
+  margin: 28px 0 24px;
+}
+
+.scope-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-card);
+  padding: 26px 28px 28px;
+}
+
+.scope-card__title {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin: 0 0 18px;
+}
+
+.scope-card--excluded .scope-card__title {
+  color: var(--body);
+}
+
+.x-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.x-list li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 15px;
+  color: var(--body);
+}
+
+.x-list li::before {
+  content: "";
+  flex: none;
+  width: 10px;
+  height: 2px;
+  background: var(--rule-strong, #b9b2a4);
+  margin-top: 11px;
+}
+
+.scope-foot {
+  max-width: 78ch;
+}
+
+/* --- Founder LinkedIn: icon + label --- */
+
+.founder__linkedin a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 36px;
+  padding: 6px 14px 6px 10px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.founder__linkedin a svg {
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+
+.founder__linkedin a:hover,
+.founder__linkedin a:focus-visible {
+  color: var(--cream);
+  background: var(--navy);
+  border-color: var(--navy);
+}
+
+/* --- Footer: pages in two columns instead of one tall stack --- */
+
+.footer-col--pages {
+  flex: 1 1 320px;
+}
+
+.footer-col--pages h2 {
+  width: 100%;
+}
+
+.footer-col--pages {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 2px 28px;
+  align-content: start;
+}
+
+.footer-col--pages h2 {
+  grid-column: 1 / -1;
+}
+
+.footer-col a {
+  min-height: 28px;
+}
+
+@media (max-width: 520px) {
+  .footer-col--pages {
+    grid-template-columns: 1fr;
+  }
+}
