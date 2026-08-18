@@ -1,24 +1,28 @@
 # EngineeringXYZ
 
-> Project-specific industrial automation and machine-design support in Irvine,
-> California for qualifying manufacturing and industrial R&D companies.
+> Design-only industrial automation, machine-design, and control-system support
+> in Irvine, California for manufacturers and industrial R&D teams.
 
 Last updated: 2026-08-18
 Canonical site: https://engineeringxyz.com
 Contact: info@engineeringxyz.com · 760-515-1517
 Location: Irvine, CA. Southern California on-site; remote clients nationwide.
 
-EngineeringXYZ considers work for qualifying manufacturing, research-and-
-development, utility, and other industrial companies when the work is
+EngineeringXYZ considers work for manufacturers, industrial R&D teams,
+utilities, and other industrial companies when the work is
 connected with their own products, systems, or services. Marco Wu, Ph.D. in
 Mechanical Engineering, serves as project lead for each agreed EngineeringXYZ
 scope. Each client, vendor, installer, and specialist remains responsible for
 its own work as defined in the written project agreement.
 
-EngineeringXYZ is not a California-licensed professional engineering firm. It
-does not offer civil, structural, building/facility engineering, PE-stamped
-services, or electrical contracting or installation. Organizational
-eligibility and technical fit are reviewed before an engagement begins.
+EngineeringXYZ delivers engineering documentation only. Clients procure all
+hardware, engage their own fabricators and UL 508A panel shops, and retain
+licensed C-10 electrical contractors for field wiring and facility electrical
+installation. Clients own, install, operate, and maintain the resulting
+equipment. EngineeringXYZ is not a California-licensed professional engineering
+firm and does not offer civil, structural, building/facility engineering or
+PE-stamped services. Organizational eligibility and technical fit are reviewed
+before an engagement begins.
 
 ## Services
 
@@ -40,6 +44,12 @@ eligibility and technical fit are reviewed before an engagement begins.
 - **Defined Project-Recovery and Design-Capacity Support** — design review,
   troubleshooting, defined overflow design work, vendor coordination, and
   handoff packages.
+- **Control System and Machine Electrical Design Support** — control
+  architecture, I/O lists, machine electrical schematics prepared using NFPA 79
+  as a design reference, component specification, PLC/HMI programming, and
+  engineering support during client-led testing and commissioning. Panel
+  building, field wiring, and facility connection remain with the client's own
+  panel shop and licensed electrical contractor.
 
 ## Process
 
@@ -53,8 +63,8 @@ information can be reviewed under NDA.
 - One machine concept was redesigned from 49 motors to 4 while retaining the
   required functions.
 - 10+ years of automation and machine-design experience.
-- 4 U.S. patents granted and in process.
-- 10+ peer-reviewed publications.
+- <<VERIFY: exact truthful patent wording>>
+- <<VERIFY: exact number of peer-reviewed publications>>
 
 Client names and proprietary project details are withheld where required for
 confidentiality. These are specific credentials and project outcomes, not
@@ -64,7 +74,7 @@ promises of typical results.
 
 - https://engineeringxyz.com/ — positioning, selected work, testimonials,
   process, and FAQ.
-- https://engineeringxyz.com/services.html — six industrial design and automation
+- https://engineeringxyz.com/services.html — seven industrial design and automation
   service areas, typical problems, benefits, and deliverables.
 - https://engineeringxyz.com/projects.html — four industrial project case studies.
 - https://engineeringxyz.com/about.html — consultancy and founder background,
@@ -81,6 +91,8 @@ promises of typical results.
 ## Claim boundaries
 
 EngineeringXYZ publishes no staff-size, office-size, revenue, or certification
-claims. It is presented as a project-specific industrial automation and
-machine-design consultancy led by Marco Wu, Ph.D., with defined specialist
-support when scope requires.
+claims. It is presented as a design-only industrial automation, machine-design,
+and control-system practice led by Marco Wu, Ph.D., with defined specialist
+support when scope requires. It does not purchase or resell hardware, build or
+warrant completed machines, perform installation work, or direct the means and
+methods of licensed trades.

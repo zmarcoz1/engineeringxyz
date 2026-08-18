@@ -1492,6 +1492,65 @@ summary:focus-visible {
 }
 
 /* --------------------------------------------------------------------------
+   Scope and responsibility tables
+   -------------------------------------------------------------------------- */
+
+.scope-exclusions {
+  margin-top: 12px;
+  margin-bottom: 24px;
+}
+
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  margin: 24px 0;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-card);
+  background: var(--white);
+}
+
+.scope-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  color: var(--ink);
+}
+
+.scope-table th,
+.scope-table td {
+  padding: 16px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--rule);
+}
+
+.scope-table th {
+  color: var(--navy);
+  background: var(--cream);
+  font-family: var(--font-head);
+  font-size: 14px;
+}
+
+.scope-table td {
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.scope-table th:first-child,
+.scope-table td:first-child {
+  width: 40%;
+}
+
+.scope-table th:nth-child(2),
+.scope-table td:nth-child(2) {
+  width: 30%;
+}
+
+.scope-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
    Footer
    -------------------------------------------------------------------------- */
 
