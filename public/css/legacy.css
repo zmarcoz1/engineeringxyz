@@ -1737,6 +1737,11 @@ textarea {
   color: var(--muted);
 }
 
+.footer-column .footer-scope {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+}
+
 .footer-links {
   display: grid;
   gap: 0.65rem;
