@@ -3,22 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Contact EngineeringXYZ | Discuss an Engineering Project</title>
-    <meta name="description" content="Discuss a machine, fixture, inspection, production-equipment, or mechanical engineering project with EngineeringXYZ. Replies within one business day." />
+    <title>Contact EngineeringXYZ | Discuss an Industrial Project</title>
+    <meta name="description" content="Discuss an industrial automation, machine-design, fixture, or internal-equipment need with EngineeringXYZ. Eligibility is reviewed first." />
     <meta name="robots" content="max-image-preview:large" />
     <link rel="canonical" href="https://engineeringxyz.com/contact.html" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="EngineeringXYZ" />
     <meta property="og:url" content="https://engineeringxyz.com/contact.html" />
-    <meta property="og:title" content="Contact EngineeringXYZ | Discuss an Engineering Project" />
-    <meta property="og:description" content="Discuss a machine, fixture, inspection, production-equipment, or mechanical engineering project with EngineeringXYZ. Replies within one business day." />
+    <meta property="og:title" content="Contact EngineeringXYZ | Discuss an Industrial Project" />
+    <meta property="og:description" content="Discuss an industrial automation, machine-design, fixture, or internal-equipment need with EngineeringXYZ. Eligibility is reviewed first." />
     <meta property="og:image" content="https://engineeringxyz.com/assets/og-engineeringxyz.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Benchtop gantry fixture assembly on an engineering workbench in a machine shop" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Contact EngineeringXYZ | Discuss an Engineering Project" />
-    <meta name="twitter:description" content="Discuss a machine, fixture, inspection, production-equipment, or mechanical engineering project with EngineeringXYZ. Replies within one business day." />
+    <meta name="twitter:title" content="Contact EngineeringXYZ | Discuss an Industrial Project" />
+    <meta name="twitter:description" content="Discuss an industrial automation, machine-design, fixture, or internal-equipment need with EngineeringXYZ. Eligibility is reviewed first." />
     <meta name="twitter:image" content="https://engineeringxyz.com/assets/og-engineeringxyz.jpg" />
     <meta name="twitter:image:alt" content="Benchtop gantry fixture assembly on an engineering workbench in a machine shop" />
     <link rel="icon" href="favicon.ico" sizes="any" />
@@ -94,12 +94,18 @@
         <div class="shell contact-layout">
           <div class="contact-aside">
             <p class="eyebrow">Contact</p>
-            <h1>Discuss a Current Engineering Project</h1>
+            <h1>Discuss an Industrial Automation or Machine-Design Need</h1>
             <p style="margin-top: 18px">
-              Provide a short description of the equipment, fixture,
-              prototype, production issue, or engineering bottleneck. Photos,
-              drawings, and specifications can be reviewed after initial
-              contact.
+              Provide a short, nonconfidential description of your organization
+              and its own product, system, internal equipment, or process.
+              EngineeringXYZ first reviews eligibility, exclusions, risks, and
+              technical fit.
+            </p>
+            <p class="scope-notice">
+              EngineeringXYZ is not a California-licensed professional
+              engineering firm and does not offer civil, structural,
+              building/facility engineering, PE-stamped services, or electrical
+              contracting or installation.
             </p>
             <div class="contact-details">
               <p>
@@ -116,7 +122,7 @@
                 nationwide
               </p>
               <p>
-                <span class="label-inline">Reply time:</span> Within one
+                <span class="label-inline">Typical response target:</span> One
                 business day
               </p>
               <p>
@@ -171,6 +177,23 @@
                   <p class="field-error" data-error-for="email"></p>
                 </div>
                 <div class="field">
+                  <label for="c-entity-type">Company entity type *</label>
+                  <select id="c-entity-type" name="entity_type" required>
+                    <option value="">Select an entity type&hellip;</option>
+                    <option value="corporation">Corporation</option>
+                    <option value="llc-or-partnership">LLC or partnership</option>
+                    <option value="government-or-utility">Government agency or utility</option>
+                    <option value="sole-proprietor-or-individual">Sole proprietor or individual</option>
+                    <option value="other-or-unknown">Other or unknown</option>
+                  </select>
+                  <p class="field-error" data-error-for="entity_type"></p>
+                </div>
+                <div class="field">
+                  <label for="c-industry">Industry *</label>
+                  <input id="c-industry" name="industry" type="text" required placeholder="Manufacturing, medical device, R&amp;D, utility&hellip;" />
+                  <p class="field-error" data-error-for="industry"></p>
+                </div>
+                <div class="field">
                   <label for="c-phone">Phone (optional)</label>
                   <input
                     id="c-phone"
@@ -184,13 +207,12 @@
                   <label for="c-category">Project category *</label>
                   <select id="c-category" name="category" required>
                     <option value="">Select a category&hellip;</option>
-                    <option value="machine prototype">Machine prototype</option>
-                    <option value="fixture or workholding">Fixture or workholding</option>
-                    <option value="inspection or test system">Inspection or test system</option>
-                    <option value="production equipment">Production equipment</option>
-                    <option value="mechanical design or drawings">Mechanical design or drawings</option>
-                    <option value="engineering capacity">Engineering capacity</option>
-                    <option value="troubleshooting or project recovery">Troubleshooting or project recovery</option>
+                    <option value="machine and prototype design support">Machine and prototype design support</option>
+                    <option value="fixture and workholding design support">Fixture and workholding design support</option>
+                    <option value="internal inspection or test equipment">Internal inspection or test-equipment support</option>
+                    <option value="industrial cad and drawing documentation">Industrial CAD and drawing documentation</option>
+                    <option value="manufacturing process or internal equipment">Manufacturing-process or internal-equipment support</option>
+                    <option value="defined project recovery or design capacity">Defined project-recovery or design-capacity support</option>
                     <option value="other">Other</option>
                   </select>
                   <p class="field-error" data-error-for="category"></p>
@@ -240,6 +262,19 @@
               </label>
               <p class="field-error" data-error-for="consent"></p>
 
+              <label class="consent" for="c-eligibility">
+                <input id="c-eligibility" name="eligibility" type="checkbox" required />
+                <span>I confirm that this inquiry concerns my company's or an affiliate's own products, systems, or services. It does not request civil, structural, building/facility work, a PE stamp, or electrical contracting/installation. *</span>
+              </label>
+              <p class="field-error" data-error-for="eligibility"></p>
+
+              <p class="field-hint" style="margin-bottom: 16px">
+                Submitting this form does not create a consultant-client
+                relationship or authorize work. Do not send confidential
+                technical files until an NDA or other written arrangement is
+                in place.
+              </p>
+
               <div class="hp-field" aria-hidden="true">
                 <label for="c-website">Leave this field empty</label>
                 <input
@@ -265,11 +300,8 @@
       <div class="shell footer-top">
         <div class="footer-about">
           <p class="footer-brand">EngineeringXYZ</p>
-          <p>
-            Mechanical engineering consultancy for machine prototypes,
-            fixtures, inspection systems, production equipment, and
-            manufacturing engineering support.
-          </p>
+          <p>Industrial automation and machine-design support for qualifying manufacturing and industrial/R&amp;D companies.</p>
+          <p class="footer-scope">Not a California-licensed professional engineering firm. No civil, structural, building/facility engineering, PE-stamped services, or electrical contracting/installation.</p>
         </div>
         <nav class="footer-col" aria-labelledby="footer-pages">
           <h2 id="footer-pages">Pages</h2>
@@ -295,7 +327,7 @@
       </div>
       <div class="shell footer-bottom">
         <p>&copy; 2026 EngineeringXYZ. All rights reserved.</p>
-        <p>Led by Dr. Marco Wu, Ph.D. Mechanical Engineering</p>
+        <p>Led by Marco Wu, Ph.D. in Mechanical Engineering</p>
       </div>
     </footer>
   </body>

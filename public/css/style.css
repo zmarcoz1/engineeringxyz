@@ -220,6 +220,22 @@ summary:focus-visible {
   max-width: 62ch;
 }
 
+.scope-notice {
+  max-width: 72ch;
+  margin-top: 22px;
+  padding: 16px 18px;
+  border-left: 4px solid var(--gold);
+  background: rgba(10, 48, 78, 0.06);
+  color: var(--body);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.scope-notice--dark {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--cream);
+}
+
 .section-head {
   margin-bottom: 48px;
 }
@@ -1509,6 +1525,11 @@ summary:focus-visible {
   font-size: 14px;
   color: var(--muted-on-navy);
   max-width: 44ch;
+}
+
+.footer-about .footer-scope {
+  margin-top: 10px;
+  font-size: 12px;
 }
 
 .footer-col {
