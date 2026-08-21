@@ -281,28 +281,21 @@
   var CONTACT_FIELDS = [
     "name",
     "company",
-    "entity_type",
-    "industry",
     "email",
     "phone",
     "category",
     "timeline",
     "message",
-    "consent",
-    "eligibility"
+    "consent"
   ];
 
   function validateContact(form) {
     var values = {
       name: form.elements.name.value.trim(),
       company: form.elements.company.value.trim(),
-      entity_type: form.elements.entity_type.value,
-      industry: form.elements.industry.value.trim(),
       email: form.elements.email.value.trim(),
-      category: form.elements.category.value,
       message: form.elements.message.value.trim(),
-      consent: form.elements.consent.checked,
-      eligibility: form.elements.eligibility.checked
+      consent: form.elements.consent.checked
     };
 
     var errors = {};
@@ -315,22 +308,10 @@
       errors.company = "Enter your company name.";
     }
 
-    if (!values.entity_type) {
-      errors.entity_type = "Select your company's entity type.";
-    }
-
-    if (!values.industry) {
-      errors.industry = "Enter your company's industry.";
-    }
-
     if (!values.email) {
       errors.email = "Enter your work email.";
     } else if (!isValidEmail(values.email)) {
       errors.email = "Enter a valid work email address.";
-    }
-
-    if (!values.category) {
-      errors.category = "Select a project category.";
     }
 
     if (!values.message) {
@@ -342,10 +323,6 @@
 
     if (!values.consent) {
       errors.consent = "Confirm the acknowledgement so we can reply.";
-    }
-
-    if (!values.eligibility) {
-      errors.eligibility = "Confirm that the inquiry is within the stated industrial scope.";
     }
 
     return errors;
@@ -390,18 +367,6 @@
       return;
     }
 
-    var entityType = form.elements.entity_type;
-    var governmentNote = document.getElementById("government-agency-note");
-
-    function updateGovernmentNote() {
-      if (governmentNote) {
-        governmentNote.hidden = entityType.value !== "government-agency";
-      }
-    }
-
-    entityType.addEventListener("change", updateGovernmentNote);
-    updateGovernmentNote();
-
     form.addEventListener("submit", function (event) {
       event.preventDefault();
 
@@ -442,21 +407,12 @@
       var payload = addCampaignFields({
         name: senderName,
         company: form.elements.company.value.trim(),
-        entity_type: form.elements.entity_type.value,
-        industry: form.elements.industry.value.trim(),
         email: form.elements.email.value.trim(),
         phone: form.elements.phone.value.trim(),
-        category: form.elements.category.value,
+        category: form.elements.category.value || "other",
         timeline: form.elements.timeline.value,
-        message:
-          form.elements.message.value.trim() +
-          "\n\nEligibility screening: entity type=" +
-          form.elements.entity_type.value +
-          "; industry=" +
-          form.elements.industry.value.trim() +
-          "; requester confirmed company/affiliate own-product, system, or service scope and exclusions.",
+        message: form.elements.message.value.trim(),
         consent: "yes",
-        eligibility: "yes",
         website: "",
         elapsed_ms: elapsedMs()
       });
