@@ -237,8 +237,10 @@ const applyStructuredData = () => {
     areaServed: "US",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Irvine",
+      streetAddress: "1968 S. Coast Hwy #334",
+      addressLocality: "Laguna Beach",
       addressRegion: "CA",
+      postalCode: "92651",
       addressCountry: "US"
     },
     serviceType: [

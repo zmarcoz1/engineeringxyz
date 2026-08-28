@@ -1,12 +1,13 @@
 # EngineeringXYZ
 
 > Design-only industrial automation, machine-design, and control-system support
-> in Irvine, California for manufacturers and industrial R&D teams.
+> in Laguna Beach, California for manufacturers and industrial R&D teams.
 
 Last updated: 2026-08-18
 Canonical site: https://engineeringxyz.com
 Contact: info@engineeringxyz.com · 760-515-1517
-Location: Irvine, CA. Southern California on-site; remote clients nationwide.
+Mailing address: EngineeringXYZ, 1968 S. Coast Hwy #334, Laguna Beach CA 92651.
+Service area: Southern California on-site; remote clients nationwide.
 
 EngineeringXYZ considers work for manufacturers, industrial R&D teams,
 utilities, and other industrial companies when the work is
